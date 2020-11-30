@@ -15,8 +15,7 @@ class AoCPuzzle:
         self.input_filename = join(getcwd(), f'src/puzzles/{self.day_number}/input')
         self.output_filename = join(getcwd(), f'src/puzzles/{self.day_number}/output')
 
-        self.days = {i: None for i in range(1, 26)}
-        self.input_data = {}
+        self.input_data: Any = {}
 
     def download_input(self) -> None:
         if isfile(self.input_filename):

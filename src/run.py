@@ -5,24 +5,10 @@ from pathlib import Path
 from shutil import copy
 from sys import argv, exit, stderr
 from traceback import print_exc
-from typing import Any
 
 import puzzles
 
-from attr import attrib, attrs
 from tabulate import tabulate
-
-
-@attrs(frozen=True)
-class PuzzleOutput:
-    """Puzzle output."""
-
-    puzzle_num = attrib(type=str)
-    part1_res = attrib(type=Any)
-    part1_exec_time = attrib(type=str)
-    part2_res = attrib(type=Any)
-    part2_exec_time = attrib(type=str)
-
 
 base_template = """
 from aocpuzzle import AoCPuzzle
@@ -50,9 +36,9 @@ def main():
     run_all_puzzles = False
     curr_puzzle = date.today().day
 
-    curr_path = dirname(abspath(__file__))
-    settings_path = join(curr_path, 'settings.json')
-    settings_default_path = join(curr_path, 'settings.default.json')
+    src_path = dirname(abspath(__file__))
+    settings_path = join(src_path, 'settings.json')
+    settings_default_path = join(src_path, 'settings.default.json')
 
     if len(args) > 1:
         input_puzzle = args[1]
@@ -85,7 +71,7 @@ def main():
         puzzles_to_run = [day for day in range(1, 26)]
 
     puzzle_outputs = [
-        ['Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time', 'Part 2 Result', 'Part 2 Exec Time']
+        ['Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time', 'Part 2 Result', 'Part 2 Exec Time'],
     ]
 
     for day in [f'{d:02d}' for d in puzzles_to_run]:
@@ -115,8 +101,8 @@ def main():
                 print_exc()
         else:
             template = base_template.format(day)
-            puzzle_dir = join(curr_path, 'puzzles/{}'.format(day))
-            puzzle_solution = join(curr_path, 'puzzles/{}/solution.py'.format(day))
+            puzzle_dir = join(src_path, 'puzzles/{}'.format(day))
+            puzzle_solution = join(src_path, 'puzzles/{}/solution.py'.format(day))
 
             puzzle_path = Path(puzzle_dir)
             puzzle_path.mkdir()
@@ -127,7 +113,8 @@ def main():
             print(f'\nClass for day {day} created. Happy Coding!!\n')
             exit(1)
 
-    print(tabulate(puzzle_outputs, headers="firstrow", tablefmt='pretty'))
+    if len(puzzle_outputs) > 1:
+        print(tabulate(puzzle_outputs, headers='firstrow', tablefmt='pretty'))
 
 
 if __name__ == '__main__':
