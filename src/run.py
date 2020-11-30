@@ -6,9 +6,9 @@ from shutil import copy
 from sys import argv, exit, stderr
 from traceback import print_exc
 
-import puzzles
-
 from tabulate import tabulate
+
+import puzzles
 
 base_template = """
 from aocpuzzle import AoCPuzzle
@@ -68,7 +68,7 @@ def main():
     puzzles_to_run = [puzzle_number]
 
     if run_all_puzzles:
-        puzzles_to_run = [day for day in range(1, 26)]
+        puzzles_to_run = [day for day in range(1, 5)]
 
     puzzle_outputs = [
         ['Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time', 'Part 2 Result', 'Part 2 Exec Time'],
@@ -111,7 +111,7 @@ def main():
                 f.writelines(template.format(day))
 
             print(f'\nClass for day {day} created. Happy Coding!!\n')
-            exit(1)
+            # exit(1)
 
     if len(puzzle_outputs) > 1:
         print(tabulate(puzzle_outputs, headers='firstrow', tablefmt='pretty'))
