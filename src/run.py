@@ -71,7 +71,10 @@ def main():
         puzzles_to_run = [day for day in range(1, 5)]
 
     puzzle_outputs = [
-        ['Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time', 'Part 2 Result', 'Part 2 Exec Time'],
+        [
+            'Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time',
+            'Part 2 Result', 'Part 2 Exec Time', 'Number of Test Cases',
+        ],
     ]
 
     for day in [f'{d:02d}' for d in puzzles_to_run]:
@@ -92,6 +95,7 @@ def main():
                         puzzle_instance.part1_exec_time,
                         puzzle_instance.part2_res,
                         puzzle_instance.part2_exec_time,
+                        puzzle_instance.num_test_cases,
                     ],
                 )
             except ConnectionError as ce:

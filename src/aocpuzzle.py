@@ -24,7 +24,7 @@ class AoCPuzzle:
             return
 
         print(f'Downloading input file for day {self.day_number}...')
-        dl_url = f'https://adventofcode.com/{self.year}/day/{self.day_number}/input'
+        dl_url = f'https://adventofcode.com/{self.year}/day/{int(str(self.day_number))}/input'
 
         response = get(dl_url, cookies={'session': self.session})
         status_code, text = response.status_code, response.text
@@ -53,9 +53,9 @@ class AoCPuzzle:
             remove(self.output_filename)
 
     def execute(self):
-        # self.download_input()
-        # self.load_input()
-        # self.remove_output()
+        self.download_input()
+        self.load_input()
+        self.delete_output()
 
         with open(self.output_filename, 'w') as output_file:
             def print_fc(text):
@@ -83,7 +83,7 @@ class AoCPuzzle:
             self.part2_exec_time = f'{((time() - start_time) * 1000):.3f} ms'
             print_fc(f'Execution time: {self.part2_exec_time}')
 
-            self.test_cases(self.input_data)
+            self.num_test_cases = self.test_cases(self.input_data)
 
     def post_process_input_data(self, input_data: Any) -> Any:
         return input_data
