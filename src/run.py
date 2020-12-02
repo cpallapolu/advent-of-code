@@ -50,9 +50,9 @@ def main():
     else:
         puzzle_number = curr_puzzle
 
-    # if puzzle_number < 1 or puzzle_number > 25:
-    #     print('\nGiven Puzzle is out of range 1-25.\n')
-    #     exit(1)
+    if puzzle_number < 1 or puzzle_number > 25:
+        print('\nGiven Puzzle is out of range 1-25.\n')
+        exit(1)
 
     if isfile(settings_path):
         with open(settings_path, 'r') as s:
@@ -68,12 +68,15 @@ def main():
     puzzles_to_run = [puzzle_number]
 
     if run_all_puzzles:
-        puzzles_to_run = [day for day in range(1, 5)]
+        puzzles_to_run = [day for day in range(1, 26)]
+
+    if curr_puzzle < 26:
+        puzzles_to_run = puzzles_to_run[:curr_puzzle]
 
     puzzle_outputs = [
         [
-            'Puzzle Number', 'Part 1 Result', 'Part 1 Exec Time',
-            'Part 2 Result', 'Part 2 Exec Time', 'Number of Test Cases',
+            'Puzzle #', 'Part 1 Result', 'Part 1 Exec Time',
+            'Part 2 Result', 'Part 2 Exec Time', '# of Test Cases',
         ],
     ]
 

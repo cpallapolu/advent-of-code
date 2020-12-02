@@ -1,5 +1,4 @@
-from collections import Counter
-from typing import Dict, List
+from typing import List
 
 from aocpuzzle import AoCPuzzle
 
@@ -25,16 +24,12 @@ class Puzzle02(AoCPuzzle):
         processed_input_data = []
 
         for rule in input_data:
-            [min_len, rest] = rule.split('-')
-            [max_char_len, password] = rest.split(':')
-            [max_len, char] = max_char_len.split(' ')
-            password_rule_len = PasswordRuleLen(
-                int(min_len.strip()),
-                int(max_len.strip()),
-                char.strip(),
-                password.strip(),
+            [min_max, char, password] = rule.split()
+            min_len, max_len = min_max.split('-')
+
+            processed_input_data.append(
+                PasswordRuleLen(int(min_len), int(max_len), char[0], password),
             )
-            processed_input_data.append(password_rule_len)
 
         return processed_input_data
 
@@ -42,48 +37,38 @@ class Puzzle02(AoCPuzzle):
         processed_input_data = []
 
         for rule in input_data:
-            [pos1, rest] = rule.split('-')
-            [pos2_char_len, password] = rest.split(':')
-            [pos2, char] = pos2_char_len.split(' ')
-            password_rule_pos = PasswordRulePos(
-                int(pos1.strip()),
-                int(pos2.strip()),
-                char.strip(),
-                password.strip(),
+            [pos1_pos2, char, password] = rule.split()
+            pos1, pos2 = pos1_pos2.split('-')
+
+            processed_input_data.append(
+                PasswordRulePos(int(pos1), int(pos2), char[0], password),
             )
-            processed_input_data.append(password_rule_pos)
 
         return processed_input_data
 
     def part1(self, input_data: List[str]) -> int:
-        valid_passwords = 0
+        valid_passwords = [
+            data.min_len <= data.password.count(data.char) <= data.max_len
+            for data in self.process_part1_input_data(input_data)
+        ]
 
-        for data in self.process_part1_input_data(input_data):
-            password_counter: Dict[str, int] = Counter(data.password)
-
-            if data.min_len <= password_counter[data.char] <= data.max_len:
-                valid_passwords += 1
-
-        return valid_passwords
+        return sum(valid_passwords)
 
     def part2(self, input_data: List[str]) -> int:
-        valid_passwords = 0
+        valid_passwords = [
+            sum(data.password[pos - 1] == data.char for pos in [data.pos1, data.pos2]) == 1
+            for data in self.process_part2_input_data(input_data)
+        ]
 
-        for data in self.process_part2_input_data(input_data):
-            char_pos1 = data.password[data.pos1 - 1]
-            char_pos2 = data.password[data.pos2 - 1]
-
-            char_only_pos1 = data.char == char_pos1 and data.char != char_pos2
-            char_only_pos2 = data.char != char_pos1 and data.char == char_pos2
-
-            if char_only_pos1 or char_only_pos2:
-                valid_passwords += 1
-        return valid_passwords
+        return sum(valid_passwords)
 
     def test_cases(self, input_data: List[str]) -> int:
         tests = ['1-3 a: abcde', '1-3 b: cdefg', '2-9 c: ccccccccc']
 
         assert self.part1(tests) == 2
-        assert self.part2(tests) == 1
+        assert self.part1(input_data) == 620
 
-        return 6
+        assert self.part2(tests) == 1
+        assert self.part2(input_data) == 727
+
+        return 4

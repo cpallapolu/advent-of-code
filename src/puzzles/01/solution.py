@@ -40,6 +40,9 @@ class Puzzle01(AoCPuzzle):
         expenses = [1721, 979, 366, 299, 675, 1456]
 
         assert self.part1(expenses) == 514579
-        assert self.part2(expenses) == 241861950
+        assert self.part1(input_data) == 651651
 
-        return 2
+        assert self.part2(expenses) == 241861950
+        assert self.part2(input_data) == 214486272
+
+        return 4
