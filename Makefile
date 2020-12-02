@@ -1,9 +1,10 @@
 
-clean-files:
-	find . -name '*.pyc' -exec rm {} +
-	find . -name '*.pyo' -exec rm {} +
+remove-files:
+	find ./src -name '*.pyc' -exec rm {} +
+	find ./src -name '*.pyo' -exec rm {} +
+	find ./src -type d -name __pycache__ -exec rm -rf '{}' +
 
-lint: clean-files
+lint: remove-files
 	flake8 .
 
 pip-install:
