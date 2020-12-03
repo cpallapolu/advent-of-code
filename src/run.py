@@ -25,8 +25,9 @@ class Puzzle{0}(AoCPuzzle):
         print('day{0} part 2 in day{0}')
         return 'day{0}-part2'
 
-    def test_cases(self, input_data: Any) -> None:
+    def test_cases(self, input_data: Any) -> Any:
         print('day{0} test_cases in day{0}')
+        return 2
 """
 
 
@@ -67,11 +68,10 @@ def main():
 
     puzzles_to_run = [puzzle_number]
 
-    if run_all_puzzles:
-        puzzles_to_run = [day for day in range(1, 26)]
+    last_puzzle_num = curr_puzzle + 1 if curr_puzzle < 26 else 26
 
-    if curr_puzzle < 26:
-        puzzles_to_run = puzzles_to_run[:curr_puzzle]
+    if run_all_puzzles:
+        puzzles_to_run = [day for day in range(1, last_puzzle_num)]
 
     puzzle_outputs = [
         [
@@ -118,10 +118,12 @@ def main():
                 f.writelines(template.format(day))
 
             print(f'\nClass for day {day} created. Happy Coding!!\n')
-            # exit(1)
+            exit(1)
 
     if len(puzzle_outputs) > 1:
-        print(tabulate(puzzle_outputs, headers='firstrow', tablefmt='pretty'))
+        print('\n\n')
+        table = tabulate(puzzle_outputs, headers='firstrow', tablefmt='pretty')
+        print(table)
 
 
 if __name__ == '__main__':
