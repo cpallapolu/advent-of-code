@@ -71,4 +71,4 @@ class Puzzle02(AoCPuzzle):
         assert self.part2(tests) == 1
         assert self.part2(input_data) == 727
 
-        return 4
+        return len(input_data) + len(tests)

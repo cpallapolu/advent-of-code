@@ -45,4 +45,4 @@ class Puzzle01(AoCPuzzle):
         assert self.part2(expenses) == 241861950
         assert self.part2(input_data) == 214486272
 
-        return 4
+        return 2
