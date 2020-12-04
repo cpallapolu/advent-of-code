@@ -41,12 +41,10 @@ class AoCPuzzle:
 
     def load_input(self) -> None:
         with open(self.input_filename, 'r') as f:
-            self.input_data = [line.strip() for line in f.readlines() if line.strip()]
+            self.input_data = [line.strip() for line in f.readlines()]
 
             if len(self.input_data) == 1:
                 self.input_data = self.input_data[0]
-
-            self.input_data = self.post_process_input_data(self.input_data)
 
     def delete_output(self):
         if isfile(self.output_filename):
@@ -84,9 +82,6 @@ class AoCPuzzle:
             print_fc(f'Execution time: {self.part2_exec_time}')
 
             self.num_test_cases = self.test_cases(self.input_data)
-
-    def post_process_input_data(self, input_data: Any) -> Any:
-        return input_data
 
     def common(self, input_data: Any) -> None:
         pass

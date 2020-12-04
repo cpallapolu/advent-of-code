@@ -4,45 +4,48 @@ from aocpuzzle import AoCPuzzle
 
 
 class Puzzle01(AoCPuzzle):
-    def post_process_input_data(self, input_data: List[str]) -> List[int]:
-        return [int(num) for num in input_data]
-
     def common(self, input_data: List[int]) -> None:
         self.target = 2020
-        self.count_set: Set = set()
+        self.nums = [int(num) for num in input_data]
 
     def part1(self, input_data: List[int]) -> int:
         product = -1
+        count_set: Set = set()
 
-        for num in input_data:
+        for num in self.nums:
             rest_of_sum = self.target - num
 
-            if rest_of_sum in self.count_set:
+            if rest_of_sum in count_set:
                 product = num * rest_of_sum
                 break
-            self.count_set.add(num)
+
+            count_set.add(num)
 
         return product
 
     def part2(self, input_data: List[int]) -> int:
-        for i in range(len(input_data) - 1):
+        for i in range(len(self.nums) - 1):
             curr_set = set()
-            curr_sum = self.target - input_data[i]
+            curr_sum = self.target - self.nums[i]
 
-            for j in range(i + 1, len(input_data)):
-                if (curr_sum - input_data[j]) in curr_set:
-                    return input_data[i] * input_data[j] * (curr_sum - input_data[j])
+            for j in range(i + 1, len(self.nums)):
+                if (curr_sum - self.nums[j]) in curr_set:
+                    return self.nums[i] * self.nums[j] * (curr_sum - self.nums[j])
 
-                curr_set.add(input_data[j])
+                curr_set.add(self.nums[j])
         return -1
 
     def test_cases(self, input_data: List[int]) -> int:
         expenses = [1721, 979, 366, 299, 675, 1456]
 
+        self.common(expenses)
         assert self.part1(expenses) == 514579
+        self.common(input_data)
         assert self.part1(input_data) == 651651
 
+        self.common(expenses)
         assert self.part2(expenses) == 241861950
+        self.common(input_data)
         assert self.part2(input_data) == 214486272
 
         return 2
