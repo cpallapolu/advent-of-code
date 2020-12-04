@@ -14,7 +14,7 @@ run-all-puzzles:
 	python src/run.py all
 
 generate-markdown:
-	python src/docs/generate_readme.py
+	python docs/generate_readme.py
 
 githooks:
 	python -m python_githooks

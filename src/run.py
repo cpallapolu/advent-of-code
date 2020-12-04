@@ -38,6 +38,7 @@ def main():
     curr_puzzle = date.today().day
 
     src_path = dirname(abspath(__file__))
+    root_path = abspath(join(src_path, '../'))
 
     settings_path = join(src_path, 'settings.json')
     settings_default_path = join(src_path, 'settings.default.json')
@@ -132,7 +133,7 @@ def main():
         )
         print(table)
 
-        with open(join(src_path, 'docs/output_table.md'), 'w') as f:
+        with open(join(root_path, 'docs/output_table.md'), 'w') as f:
             f.writelines(
                 tabulate(
                     puzzle_outputs,

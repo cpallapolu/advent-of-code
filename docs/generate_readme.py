@@ -6,11 +6,11 @@ from markdown_include.include import MarkdownInclude
 markdown_include = MarkdownInclude(
     configs={
         'inheritHeadingDepth': True,
-        'base_path': './src/docs/',
+        'base_path': './docs/',
     },
 )
 docs_path = dirname(abspath(__file__))
-root_path = abspath(join(docs_path, '../../'))
+root_path = abspath(join(docs_path, '../'))
 
 with open(join(docs_path, 'index.md'), 'r') as rf:
     with open(join(root_path, 'README.md'), 'w') as wf:
