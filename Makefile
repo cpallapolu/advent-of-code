@@ -7,7 +7,7 @@ remove-files:
 lint: remove-files
 	flake8 .
 
-pip-install:
+pip-install: remove-files
 	pip install --no-cache-dir -r ./requirements.txt
 
 run-all-puzzles:
@@ -18,3 +18,6 @@ generate-markdown:
 
 githooks:
 	python -m python_githooks
+
+install: pip-install
+	githooks
