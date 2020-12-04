@@ -38,6 +38,7 @@ def main():
     curr_puzzle = date.today().day
 
     src_path = dirname(abspath(__file__))
+
     settings_path = join(src_path, 'settings.json')
     settings_default_path = join(src_path, 'settings.default.json')
 
@@ -122,8 +123,25 @@ def main():
 
     if len(puzzle_outputs) > 1:
         print('\n\n')
-        table = tabulate(puzzle_outputs, headers='firstrow', tablefmt='pretty')
+        table = tabulate(
+            puzzle_outputs,
+            headers='firstrow',
+            tablefmt='pretty',
+            numalign='left',
+            stralign='left',
+        )
         print(table)
+
+        with open(join(src_path, 'docs/output_table.md'), 'w') as f:
+            f.writelines(
+                tabulate(
+                    puzzle_outputs,
+                    headers='firstrow',
+                    tablefmt='html',
+                    numalign='left',
+                    stralign='left',
+                ),
+            )
 
 
 if __name__ == '__main__':

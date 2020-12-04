@@ -13,5 +13,8 @@ pip-install:
 run-all-puzzles:
 	python src/run.py all
 
+generate-markdown:
+	python src/docs/generate_readme.py
+
 githooks:
 	python -m python_githooks
