@@ -25,7 +25,7 @@ class Puzzle{0}(AoCPuzzle):
         print('day{0} part 2 in day{0}')
         return 'day{0}-part2'
 
-    def test_cases(self, input_data: Any) -> Any:
+    def test_cases(self, input_data: Any) -> int:
         print('day{0} test_cases in day{0}')
         return 2
 """
