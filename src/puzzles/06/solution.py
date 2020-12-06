@@ -6,10 +6,9 @@ from aocpuzzle import AoCPuzzle
 
 class Puzzle06(AoCPuzzle):
     def common(self, input_data: List[str]) -> None:
-        input_data = ('\n'.join(input_data)).split('\n\n')
         self.group_answers = []
 
-        for group in input_data:
+        for group in '\n'.join(input_data).split('\n\n'):
             self.group_answers.append((
                 len(group.split('\n')),
                 Counter(''.join(group.split('\n'))),
