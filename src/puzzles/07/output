@@ -1,10 +1,10 @@
 
 Part 1:
 ============================================
-Result: 218
-Execution time: 0.094 ms
+Result: 302
+Execution time: 4.572 ms
 
 Part 2:
 ============================================
-Result: 3847183340
-Execution time: 0.374 ms
+Result: 4165
+Execution time: 0.148 ms
