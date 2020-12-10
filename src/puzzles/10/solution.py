@@ -1,5 +1,5 @@
-from functools import lru_cache
-from typing import List
+from collections import defaultdict
+from typing import Dict, List
 
 from aocpuzzle import AoCPuzzle
 
@@ -37,8 +37,10 @@ class Puzzle10(AoCPuzzle):
                     adapters_left.add(next_rating_option)
         return diff_1 * diff_3
 
-    @lru_cache
     def count_ways(self, curr_rating: int) -> int:
+        if curr_rating in self.cache:
+            return self.cache[curr_rating]
+
         if curr_rating == self.target_rating:
             return 1
 
@@ -47,10 +49,13 @@ class Puzzle10(AoCPuzzle):
         for next_rating in [a for a in self.adapters if 1 <= a - curr_rating <= 3]:
             count += self.count_ways(next_rating)
 
+        self.cache[curr_rating] = count
+
         return count
 
     def part2(self, input_data: List[str]) -> int:
         curr_rating = 0
+        self.cache: Dict[int, int] = defaultdict(int)
         self.adapters = self.adapters[:] + [self.target_rating]
 
         return self.count_ways(curr_rating)
@@ -64,17 +69,14 @@ class Puzzle10(AoCPuzzle):
         ]
 
         self.common(part1_tests_1)
-        self.count_ways.cache_clear()
         assert self.part1(part1_tests_1) == 28
         assert self.part2(part1_tests_1) == 8
 
         self.common(part1_tests_2)
-        self.count_ways.cache_clear()
         assert self.part1(part1_tests_2) == 220
         assert self.part2(part1_tests_2) == 19208
 
         self.common(input_data)
-        self.count_ways.cache_clear()
         assert self.part1(input_data) == 2775
         assert self.part2(input_data) == 518344341716992
 
