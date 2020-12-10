@@ -1,6 +1,6 @@
 # Day 9: Encoding Error
 
-## part One
+## Part One
 
 With your neighbor happily enjoying their video game, you turn your attention to an open data port on the little screen in the seat in front of you.
 
