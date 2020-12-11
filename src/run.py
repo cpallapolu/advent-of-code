@@ -82,7 +82,7 @@ def main():
             'Puzzle #',
             'Part 1', 'Part 1 Time',
             'Part 2', 'Part 2 Time',
-            '# of Tests', 'Tests Time',
+            'Tests #', 'Tests Time',
         ],
     ]
 
