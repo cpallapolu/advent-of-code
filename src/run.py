@@ -1,7 +1,9 @@
 from datetime import date
 from json import loads
+from os import system as o_system
 from os.path import abspath, dirname, isfile, join
 from pathlib import Path
+from platform import system as p_system
 from shutil import copy
 from sys import argv, exit, stderr
 from traceback import print_exc
@@ -77,8 +79,10 @@ def main():
 
     puzzle_outputs = [
         [
-            'Puzzle #', 'Part 1 Result', 'Part 1 Exec Time',
-            'Part 2 Result', 'Part 2 Exec Time', '# of Test Cases',
+            'Puzzle #',
+            'Part 1 Result', 'Part 1 Exec Time',
+            'Part 2 Result', 'Part 2 Exec Time',
+            '# of Test Cases', 'Tests Exec Time',
         ],
     ]
 
@@ -86,23 +90,14 @@ def main():
         puzzle_class = f'Puzzle{day}'
 
         if puzzle_class in dir(puzzles):
-            print(f'\nAttempting to execute AoC puzzle {day}...')
+            print(f'Attempting to execute AoC puzzle {day}...')
 
             try:
                 puzzle_class = getattr(puzzles, f'Puzzle{day}')
                 puzzle_instance = puzzle_class(year, day, session)
                 puzzle_instance.execute()
 
-                puzzle_outputs.append(
-                    [
-                        day,
-                        puzzle_instance.part1_res,
-                        puzzle_instance.part1_exec_time,
-                        puzzle_instance.part2_res,
-                        puzzle_instance.part2_exec_time,
-                        puzzle_instance.num_test_cases,
-                    ],
-                )
+                puzzle_outputs.append(puzzle_instance.results)
             except ConnectionError as ce:
                 print(ce, file=stderr)
             except Exception as e:
@@ -123,7 +118,6 @@ def main():
             exit(1)
 
     if len(puzzle_outputs) > 1:
-        print('\n\n')
         table = tabulate(
             puzzle_outputs,
             headers='firstrow',
@@ -131,6 +125,10 @@ def main():
             numalign='left',
             stralign='left',
         )
+
+        if p_system() != 'Windows':
+            o_system('clear')
+
         print(table)
 
         with open(join(root_path, 'docs/output_table.md'), 'w') as f:

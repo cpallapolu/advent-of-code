@@ -19,8 +19,6 @@ class AoCPuzzle:
 
     def download_input(self) -> None:
         if isfile(self.input_filename):
-            print(f"\nInput already downloded to '{self.input_filename}' path.")
-
             return
 
         print(f'Downloading input file for day {self.day_number}...')
@@ -55,42 +53,37 @@ class AoCPuzzle:
         self.load_input()
         self.delete_output()
 
-        with open(self.output_filename, 'w') as output_file:
-            def print_fc(text):
-                print(text, file=output_file)
+        self.results = [self.day_number]
+
+        for part in range(1, 3):
+            start_time = time()
 
             self.common(self.input_data)
 
-            start_time = time()
+            part_func = getattr(self, f'part{part}')
+            self.results.append(part_func(self.input_data))
+            self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
-            self.part1_res = self.part1(self.input_data)
+        start_time = time()
+        self.results.append(self.test_cases(self.input_data))
+        self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
-            print_fc('\nPart 1:\n============================================')
-            print_fc(f'Result: {self.part1_res}')
-
-            self.part1_exec_time = f'{((time() - start_time) * 1000):.3f} ms'
-            print_fc(f'Execution time: {self.part1_exec_time}')
-
-            start_time = time()
-
-            self.part2_res = self.part2(self.input_data)
-
-            print_fc('\nPart 2:\n============================================')
-            print_fc(f'Result: {self.part2_res}')
-
-            self.part2_exec_time = f'{((time() - start_time) * 1000):.3f} ms'
-            print_fc(f'Execution time: {self.part2_exec_time}')
-
-            self.num_test_cases = self.test_cases(self.input_data)
+        with open(self.output_filename, 'w') as output_file:
+            print('\nPart 1:\n============================================', file=output_file)
+            print(f'Result: {self.results[0]}', file=output_file)
+            print(f'Execution time: {self.results[1]}', file=output_file)
+            print('\nPart 2:\n============================================', file=output_file)
+            print(f'Result: {self.results[2]}', file=output_file)
+            print(f'Execution time: {self.results[3]}', file=output_file)
 
     def common(self, input_data: Any) -> None:
         pass
 
-    def part1(self):
+    def part1(self, input_data: Any) -> Any:
         pass
 
-    def part2(self):
+    def part2(self, input_data: Any) -> Any:
         pass
 
-    def test_cases(self):
+    def test_cases(self, input_data: Any) -> Any:
         pass
