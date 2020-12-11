@@ -5,12 +5,19 @@ from os.path import abspath, dirname, isfile, join
 from pathlib import Path
 from platform import system as p_system
 from shutil import copy
-from sys import argv, exit, stderr
+from sys import argv, exit
+from time import time
 from traceback import print_exc
 
 from tabulate import tabulate
 
 import puzzles
+
+RED = '\033[91m'
+PURPLE = '\033[95m'
+RESET = '\033[0m'
+GREEN = '\033[92m'
+BOLD = '\033[1m'
 
 base_template = """
 from aocpuzzle import AoCPuzzle
@@ -90,7 +97,8 @@ def main():
         puzzle_class = f'Puzzle{day}'
 
         if puzzle_class in dir(puzzles):
-            print(f'Attempting to execute AoC puzzle {day}...')
+            start_time = time()
+            print(f'Attempting to execute AoC puzzle {day}...: ', end='', flush=True)
 
             try:
                 puzzle_class = getattr(puzzles, f'Puzzle{day}')
@@ -98,11 +106,15 @@ def main():
                 puzzle_instance.execute()
 
                 puzzle_outputs.append(puzzle_instance.results)
-            except ConnectionError as ce:
-                print(ce, file=stderr)
-            except Exception as e:
-                print(e, file=stderr)
+                end_time = f'{((time() - start_time) * 1000):.3f}'
+                print(f'{BOLD}{GREEN} Successful{RESET} in {BOLD}{PURPLE}{end_time} ms{RESET}')
+
+            except ConnectionError:
+                print(f'{BOLD}{GREEN} Failed {RESET}')
+            except Exception:
+                print(f'{BOLD}{GREEN} Failed {RESET}')
                 print_exc()
+                print()
         else:
             template = base_template.format(day)
             puzzle_dir = join(src_path, 'puzzles/{}'.format(day))
