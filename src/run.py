@@ -81,7 +81,7 @@ def main():
 
     last_puzzle_num = curr_puzzle + 1 if curr_puzzle < 26 else 26
 
-    if run_all_puzzles:
+    if run_all_puzzles is True:
         puzzles_to_run = [day for day in range(1, last_puzzle_num)]
 
     puzzle_outputs = [
@@ -138,8 +138,9 @@ def main():
             stralign='left',
         )
 
-        if p_system() != 'Windows':
-            o_system('clear')
+        if run_all_puzzles is True:
+            if p_system() != 'Windows':
+                o_system('clear')
 
         print(table)
 
