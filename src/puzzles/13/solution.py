@@ -56,6 +56,7 @@ class Puzzle13(AoCPuzzle):
 
         self.common(['939', '7,13,x,x,59,x,31,19'])
         assert self.part1(['939', '7,13,x,x,59,x,31,19']) == 295
+        assert self.part2(['939', '7,13,x,x,59,x,31,19']) == 1068781
 
         self.common(['1', '17,x,13,19'])
         assert self.part2(['1', '17,x,13,19']) == 3417
@@ -76,4 +77,4 @@ class Puzzle13(AoCPuzzle):
         assert self.part1(input_data) == 2845
         assert self.part2(input_data) == 487905974205117
 
-        return 2
+        return 7
