@@ -43,6 +43,7 @@ class Puzzle13(AoCPuzzle):
         return total % prod
 
     def part2(self, input_data: List[str]) -> int:
+        # Chinese Remainder Theorem - https://en.wikipedia.org/wiki/Chinese_remainder_theorem
         divisors_and_remainders = [
             (bus, bus - idx)
             for idx, bus in enumerate(self.buses)
