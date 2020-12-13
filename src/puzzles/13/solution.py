@@ -15,7 +15,7 @@ class Puzzle13(AoCPuzzle):
             if bus is not None
         ]
 
-        bus_id, wait_time = min(wait_times, key=lambda nb: nb[1])
+        bus_id, wait_time = min(wait_times, key=lambda w_t: w_t[1])
 
         return bus_id * wait_time
 
