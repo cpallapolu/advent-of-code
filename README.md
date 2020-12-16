@@ -4,7 +4,7 @@
 
 <thead>
 
-<tr><th>Puzzle #  </th><th>Part 1        </th><th>Part 1 Time  </th><th>Part 2         </th><th>Part 2 Time  </th><th>Tests #  </th><th>Tests Time   </th></tr>
+<tr><th>#  </th><th>Part 1        </th><th>Part 1 Time  </th><th>Part 2         </th><th>Part 2 Time  </th><th>Tests #  </th><th>Tests Time   </th></tr>
 
 </thead>
 

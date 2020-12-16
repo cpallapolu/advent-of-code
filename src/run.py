@@ -90,10 +90,8 @@ def main():
 
     puzzle_outputs = [
         [
-            'Puzzle #',
-            'Part 1', 'Part 1 Time',
-            'Part 2', 'Part 2 Time',
-            'Tests #', 'Tests Time',
+            '#', 'Part 1', 'Part 1 Time',
+            'Part 2', 'Part 2 Time', 'Tests #', 'Tests Time',
         ],
     ]
 
