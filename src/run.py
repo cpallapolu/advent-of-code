@@ -91,7 +91,7 @@ def main():
     puzzle_outputs = [
         [
             '#', 'Part 1', 'Part 1 Time',
-            'Part 2', 'Part 2 Time', 'Tests #', 'Tests Time',
+            'Part 2', 'Part 2 Time', 'Tests', 'Tests Time',
         ],
     ]
 
