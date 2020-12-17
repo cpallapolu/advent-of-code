@@ -42,6 +42,9 @@
 
 <tr><td>16        </td><td>19060   </td><td>123.680 ms   </td><td>953713095011</td><td>939.948 ms   </td><td>2        </td><td>767.527 ms  </td></tr>
 
+<tr><td>17 </td><td>298     </td><td>632.736 ms   </td><td>1792    </td><td>5820.070 ms  </td><td>2      </td><td>9207.170 ms </td></tr>
+
+
 </tbody>
 
 </table>
