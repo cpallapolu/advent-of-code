@@ -26,17 +26,16 @@ from typing import Any
 
 
 class Puzzle{0}(AoCPuzzle):
-    def common(self, input_data: Any) -> Any:
+    def common(self, input_data: Any) -> None:
         print('day{0} common in day{0}')
-        return 'common'
 
-    def part1(self, input_data: Any) -> Any:
+    def part1(self, input_data: Any) -> int:
         print('day{0} part 1 in day{0}')
-        return 'day{0}-part1'
+        return {0}
 
-    def part2(self, input_data: Any) -> Any:
+    def part2(self, input_data: Any) -> int:
         print('day{0} part 2 in day{0}')
-        return 'day{0}-part2'
+        return {0}
 
     def test_cases(self, input_data: Any) -> int:
         print('day{0} test_cases in day{0}')
