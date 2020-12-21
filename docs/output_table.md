@@ -1,8 +1,8 @@
 <table>
 <thead>
-<tr><th>#  </th><th>Part 1  </th><th>Part 1 Time  </th><th>Part 2  </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time  </th></tr>
+<tr><th>#  </th><th>Part 1  </th><th>Part 1 Time  </th><th>Part 2                                    </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time  </th></tr>
 </thead>
 <tbody>
-<tr><td>19 </td><td>120     </td><td>160.847 ms   </td><td>350     </td><td>638.545 ms   </td><td>3      </td><td>558.422 ms  </td></tr>
+<tr><td>21 </td><td>2317    </td><td>14.924 ms    </td><td>kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz</td><td>0.857 ms     </td><td>2      </td><td>15.364 ms   </td></tr>
 </tbody>
 </table>
