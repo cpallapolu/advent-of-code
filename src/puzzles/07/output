@@ -1,10 +1,11 @@
+07|302|7.235 ms|4165|3.417 ms|3|18.942 ms
 
 Part 1:
 ============================================
-Result: 07
-Execution time: 302
+Result: 302
+Execution time: 7.235 ms
 
 Part 2:
 ============================================
-Result: 8.721 ms
-Execution time: 4165
+Result: 4165
+Execution time: 3.417 ms

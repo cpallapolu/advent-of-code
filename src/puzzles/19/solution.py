@@ -1,5 +1,4 @@
 from collections import defaultdict
-from re import fullmatch
 from typing import List
 
 from aocpuzzle import AoCPuzzle

@@ -47,6 +47,7 @@ def main():
     args = argv
     puzzle_number = 1
     run_all_puzzles = False
+    get_cache_results = False
     curr_puzzle = date.today().day
 
     src_path = dirname(abspath(__file__))
@@ -60,6 +61,9 @@ def main():
 
         if input_puzzle == 'all':
             run_all_puzzles = True
+        elif input_puzzle == 'cache':
+            run_all_puzzles = True
+            get_cache_results = True
         else:
             puzzle_number = int(args[1])
     else:
@@ -104,7 +108,7 @@ def main():
             try:
                 puzzle_class = getattr(puzzles, f'Puzzle{day}')
                 puzzle_instance = puzzle_class(year, day, session)
-                puzzle_instance.execute()
+                puzzle_instance.execute(get_cache_results)
 
                 puzzle_outputs.append(puzzle_instance.results)
                 end_time = f'{((time() - start_time) * 1000):.3f}'

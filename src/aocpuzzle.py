@@ -1,7 +1,7 @@
 from os import getcwd, remove
 from os.path import isfile, join
 from time import time
-from typing import Any
+from typing import Any, List
 
 from requests import get
 
@@ -48,33 +48,48 @@ class AoCPuzzle:
         if isfile(self.output_filename):
             remove(self.output_filename)
 
-    def execute(self):
+    def execute(self, is_cache: bool):
         self.download_input()
         self.load_input()
-        self.delete_output()
 
-        self.results = [self.day_number]
+        self.results: List[str] = []
 
-        for part in range(1, 3):
+        if is_cache is False:
+            self.delete_output()
+
+            self.results.append(str(self.day_number))
+
+            for part in range(1, 3):
+                start_time = time()
+
+                self.common(self.input_data)
+
+                part_func = getattr(self, f'part{part}')
+                self.results.append(str(part_func(self.input_data)))
+                self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
+
             start_time = time()
-
-            self.common(self.input_data)
-
-            part_func = getattr(self, f'part{part}')
-            self.results.append(part_func(self.input_data))
+            self.results.append(str(self.test_cases(self.input_data)))
             self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
-
-        start_time = time()
-        self.results.append(self.test_cases(self.input_data))
-        self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
+        else:
+            self.results = self.get_cache_results()
 
         with open(self.output_filename, 'w') as output_file:
+            print('|'.join(self.results), file=output_file)
             print('\nPart 1:\n============================================', file=output_file)
-            print(f'Result: {self.results[0]}', file=output_file)
-            print(f'Execution time: {self.results[1]}', file=output_file)
+            print(f'Result: {self.results[1]}', file=output_file)
+            print(f'Execution time: {self.results[2]}', file=output_file)
             print('\nPart 2:\n============================================', file=output_file)
-            print(f'Result: {self.results[2]}', file=output_file)
-            print(f'Execution time: {self.results[3]}', file=output_file)
+            print(f'Result: {self.results[3]}', file=output_file)
+            print(f'Execution time: {self.results[4]}', file=output_file)
+
+    def get_cache_results(self) -> List[str]:
+        results: List[str] = []
+
+        with open(self.output_filename, 'r') as output_file:
+            results = output_file.readline().rstrip().split('|')
+
+        return results
 
     def common(self, input_data: Any) -> None:
         pass

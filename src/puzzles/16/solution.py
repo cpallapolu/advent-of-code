@@ -1,6 +1,6 @@
 from collections import defaultdict
 from math import prod
-from typing import Any, Dict, List, Set, Union
+from typing import Dict, List
 
 from aocpuzzle import AoCPuzzle
 
@@ -72,7 +72,7 @@ class Puzzle16(AoCPuzzle):
                     [
                         self.check_rule(note_values, valid_ticket[idx])
                         for valid_ticket in self.valid_tickets
-                    ]
+                    ],
                 )
                 if idx_valid is True:
                     positions.append(idx)

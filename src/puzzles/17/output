@@ -1,10 +1,11 @@
+17|298|700.346 ms|1792|9416.140 ms|2|10629.201 ms
 
 Part 1:
 ============================================
-Result: 17
-Execution time: 298
+Result: 298
+Execution time: 700.346 ms
 
 Part 2:
 ============================================
-Result: 632.736 ms
-Execution time: 1792
+Result: 1792
+Execution time: 9416.140 ms

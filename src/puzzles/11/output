@@ -1,10 +1,11 @@
+11|2166|3659.714 ms|1955|5294.657 ms|2|8580.258 ms
 
 Part 1:
 ============================================
-Result: 11
-Execution time: 2166
+Result: 2166
+Execution time: 3659.714 ms
 
 Part 2:
 ============================================
-Result: 5904.825 ms
-Execution time: 1955
+Result: 1955
+Execution time: 5294.657 ms

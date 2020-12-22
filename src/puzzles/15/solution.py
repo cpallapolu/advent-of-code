@@ -33,7 +33,6 @@ class Puzzle15(AoCPuzzle):
         return self.take_turns(30000000)
 
     def test_cases(self, input_data: str) -> int:
-        print('\n\n')
         part1_test = '0,3,6'
         self.common(part1_test)
         assert self.part1(part1_test) == 436
@@ -73,5 +72,4 @@ class Puzzle15(AoCPuzzle):
         assert self.part1(input_data) == 1522
         assert self.part2(input_data) == 18234
 
-        print('day15 test_cases in day15')
-        return 2
+        return 8

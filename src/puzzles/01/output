@@ -1,10 +1,11 @@
+01|651651|0.085 ms|214486272|0.908 ms|2|1.463 ms
 
 Part 1:
 ============================================
-Result: 01
-Execution time: 651651
+Result: 651651
+Execution time: 0.085 ms
 
 Part 2:
 ============================================
-Result: 0.049 ms
-Execution time: 214486272
+Result: 214486272
+Execution time: 0.908 ms

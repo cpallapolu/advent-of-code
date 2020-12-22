@@ -1,6 +1,6 @@
 
 from collections import defaultdict
-from typing import List, Set
+from typing import Dict, List, Set
 
 from aocpuzzle import AoCPuzzle
 
@@ -23,7 +23,7 @@ class Puzzle21(AoCPuzzle):
                     list(map(lambda x: x.replace(',', ''), allergens.split(' '))),
                 ),
             )
-        self.allergen_map = defaultdict(set)
+        self.allergen_map: Dict[str, Set[str]] = defaultdict(set)
         self.no_allergen_ingredients = self.ingredients.copy()
 
     def check_foods(self) -> None:

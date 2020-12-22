@@ -1,10 +1,11 @@
+06|6782|3.068 ms|3596|2.455 ms|466|8.286 ms
 
 Part 1:
 ============================================
-Result: 06
-Execution time: 6782
+Result: 6782
+Execution time: 3.068 ms
 
 Part 2:
 ============================================
-Result: 5.734 ms
-Execution time: 3596
+Result: 3596
+Execution time: 2.455 ms

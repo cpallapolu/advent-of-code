@@ -13,6 +13,9 @@ pip-install: remove-files
 run-all-puzzles:
 	python src/run.py all
 
+run-cache-puzzles:
+	python src/run.py cache
+
 generate-markdown:
 	python docs/generate_readme.py
 

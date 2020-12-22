@@ -4,52 +4,53 @@
 
 <thead>
 
-<tr><th>#  </th><th>Part 1        </th><th>Part 1 Time  </th><th>Part 2         </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time   </th></tr>
+<tr><th>#  </th><th>Part 1        </th><th>Part 1 Time  </th><th>Part 2                                    </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time  </th></tr>
 
 </thead>
 
 <tbody>
 
-<tr><td>01        </td><td>651651        </td><td>0.049 ms     </td><td>214486272      </td><td>0.525 ms     </td><td>2        </td><td>0.752 ms     </td></tr>
+<tr><td>01 </td><td>651651        </td><td>0.085 ms     </td><td>214486272                                 </td><td>0.908 ms     </td><td>2      </td><td>1.463 ms    </td></tr>
 
-<tr><td>02        </td><td>620           </td><td>4.386 ms     </td><td>727            </td><td>3.621 ms     </td><td>1003     </td><td>4.865 ms     </td></tr>
+<tr><td>02 </td><td>620           </td><td>1.802 ms     </td><td>727                                       </td><td>2.796 ms     </td><td>1003   </td><td>4.065 ms    </td></tr>
 
-<tr><td>03        </td><td>218           </td><td>0.219 ms     </td><td>3847183340     </td><td>0.345 ms     </td><td>2        </td><td>0.625 ms     </td></tr>
+<tr><td>03 </td><td>218           </td><td>0.087 ms     </td><td>3847183340                                </td><td>0.367 ms     </td><td>2      </td><td>0.519 ms    </td></tr>
 
-<tr><td>04        </td><td>233           </td><td>1.851 ms     </td><td>111            </td><td>2.170 ms     </td><td>300      </td><td>3.016 ms     </td></tr>
+<tr><td>04 </td><td>233           </td><td>1.322 ms     </td><td>111                                       </td><td>1.797 ms     </td><td>300    </td><td>4.185 ms    </td></tr>
 
-<tr><td>05        </td><td>959           </td><td>0.817 ms     </td><td>527            </td><td>11.285 ms    </td><td>2        </td><td>7.197 ms     </td></tr>
+<tr><td>05 </td><td>959           </td><td>0.682 ms     </td><td>527                                       </td><td>7.725 ms     </td><td>2      </td><td>8.558 ms    </td></tr>
 
-<tr><td>06        </td><td>6782          </td><td>5.734 ms     </td><td>3596           </td><td>3.469 ms     </td><td>466      </td><td>5.034 ms     </td></tr>
+<tr><td>06 </td><td>6782          </td><td>3.068 ms     </td><td>3596                                      </td><td>2.455 ms     </td><td>466    </td><td>8.286 ms    </td></tr>
 
-<tr><td>07        </td><td>302           </td><td>8.721 ms     </td><td>4165           </td><td>3.040 ms     </td><td>3        </td><td>11.552 ms    </td></tr>
+<tr><td>07 </td><td>302           </td><td>7.235 ms     </td><td>4165                                      </td><td>3.417 ms     </td><td>3      </td><td>18.942 ms   </td></tr>
 
-<tr><td>08        </td><td>1684          </td><td>0.804 ms     </td><td>2188           </td><td>30.385 ms    </td><td>2        </td><td>35.734 ms    </td></tr>
+<tr><td>08 </td><td>1684          </td><td>0.619 ms     </td><td>2188                                      </td><td>35.047 ms    </td><td>2      </td><td>43.487 ms   </td></tr>
 
-<tr><td>09        </td><td>1930745883    </td><td>3.464 ms     </td><td>268878261      </td><td>378.905 ms   </td><td>2        </td><td>337.264 ms   </td></tr>
+<tr><td>09 </td><td>1930745883    </td><td>5.803 ms     </td><td>268878261                                 </td><td>426.633 ms   </td><td>2      </td><td>245.518 ms  </td></tr>
 
-<tr><td>10        </td><td>2775          </td><td>0.476 ms     </td><td>518344341716992</td><td>1.052 ms     </td><td>3        </td><td>2.093 ms     </td></tr>
+<tr><td>10 </td><td>2775          </td><td>0.788 ms     </td><td>518344341716992                           </td><td>1.350 ms     </td><td>3      </td><td>1.599 ms    </td></tr>
 
-<tr><td>11        </td><td>2166          </td><td>5904.825 ms  </td><td>1955           </td><td>5924.456 ms  </td><td>2        </td><td>10409.849 ms </td></tr>
+<tr><td>11 </td><td>2166          </td><td>3659.714 ms  </td><td>1955                                      </td><td>5294.657 ms  </td><td>2      </td><td>8580.258 ms </td></tr>
 
-<tr><td>12        </td><td>2847          </td><td>1.630 ms     </td><td>29839          </td><td>1.978 ms     </td><td>2        </td><td>3.789 ms     </td></tr>
+<tr><td>12 </td><td>2847          </td><td>1.062 ms     </td><td>29839                                     </td><td>0.976 ms     </td><td>2      </td><td>1.116 ms    </td></tr>
 
-<tr><td>13        </td><td>2845          </td><td>0.058 ms     </td><td>487905974205117</td><td>0.052 ms     </td><td>7        </td><td>0.140 ms     </td></tr>
+<tr><td>13 </td><td>2845          </td><td>0.029 ms     </td><td>487905974205117                           </td><td>0.053 ms     </td><td>7      </td><td>0.114 ms    </td></tr>
 
-<tr><td>14        </td><td>13105044880745</td><td>1.327 ms     </td><td>3505392154485  </td><td>117.466 ms   </td><td>3        </td><td>135.320 ms   </td></tr>
+<tr><td>14 </td><td>13105044880745</td><td>0.901 ms     </td><td>3505392154485                             </td><td>88.734 ms    </td><td>3      </td><td>87.311 ms   </td></tr>
 
-<tr><td>15        </td><td>1522          </td><td>3.860 ms     </td><td>18234          </td><td>48737.796 ms </td><td>2        </td><td>525081.320 ms</td></tr>
+<tr><td>16 </td><td>19060         </td><td>53.678 ms    </td><td>953713095011                              </td><td>597.795 ms   </td><td>3      </td><td>834.467 ms  </td></tr>
 
-<tr><td>16        </td><td>19060   </td><td>123.680 ms   </td><td>953713095011</td><td>939.948 ms   </td><td>2        </td><td>767.527 ms  </td></tr>
+<tr><td>17 </td><td>298           </td><td>700.346 ms   </td><td>1792                                      </td><td>9416.140 ms  </td><td>2      </td><td>10629.201 ms</td></tr>
 
-<tr><td>17 </td><td>298     </td><td>632.736 ms   </td><td>1792    </td><td>5820.070 ms  </td><td>2      </td><td>9207.170 ms </td></tr>
+<tr><td>18 </td><td>3885386961962 </td><td>43.641 ms    </td><td>112899558798666                           </td><td>17.725 ms    </td><td>7      </td><td>44.908 ms   </td></tr>
 
-<tr><td>18 </td><td>3885386961962</td><td>37.890 ms    </td><td>112899558798666</td><td>25.651 ms    </td><td>7      </td><td>133.936 ms  </td></tr>
+<tr><td>19 </td><td>120           </td><td>80.652 ms    </td><td>350                                       </td><td>521.283 ms   </td><td>3      </td><td>792.121 ms  </td></tr>
 
-<tr><td>19 </td><td>120     </td><td>160.847 ms   </td><td>350     </td><td>638.545 ms   </td><td>3      </td><td>558.422 ms  </td></tr>
+<tr><td>20 </td><td>20            </td><td>0.072 ms     </td><td>20                                        </td><td>0.013 ms     </td><td>2      </td><td>0.005 ms    </td></tr>
 
+<tr><td>21 </td><td>2317          </td><td>12.839 ms    </td><td>kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz</td><td>1.707 ms     </td><td>2      </td><td>17.851 ms   </td></tr>
 
-<tr><td>21 </td><td>2317    </td><td>14.924 ms    </td><td>kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz</td><td>0.857 ms     </td><td>2      </td><td>15.364 ms   </td></tr>
+<tr><td>22 </td><td>33561         </td><td>3.705 ms     </td><td>34594                                     </td><td>14708.139 ms </td><td>2      </td><td>13186.055 ms</td></tr>
 
 </tbody>
 

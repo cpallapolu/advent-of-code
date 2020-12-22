@@ -1,10 +1,11 @@
+08|1684|0.619 ms|2188|35.047 ms|2|43.487 ms
 
 Part 1:
 ============================================
-Result: 08
-Execution time: 1684
+Result: 1684
+Execution time: 0.619 ms
 
 Part 2:
 ============================================
-Result: 0.804 ms
-Execution time: 2188
+Result: 2188
+Execution time: 35.047 ms
