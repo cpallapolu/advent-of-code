@@ -1,11 +1,11 @@
-20|20|0.072 ms|20|0.013 ms|2|0.005 ms
+20|7492183537913|85.403 ms|2323|111.897 ms|2|84.966 ms
 
 Part 1:
 ============================================
-Result: 20
-Execution time: 0.072 ms
+Result: 7492183537913
+Execution time: 85.403 ms
 
 Part 2:
 ============================================
-Result: 20
-Execution time: 0.013 ms
+Result: 2323
+Execution time: 111.897 ms

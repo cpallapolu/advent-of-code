@@ -55,7 +55,7 @@ class AoCPuzzle:
         self.results: List[str] = []
 
         if is_cache is False:
-            self.delete_output()
+            # self.delete_output()
 
             self.results.append(str(self.day_number))
 
