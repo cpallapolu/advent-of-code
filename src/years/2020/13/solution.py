@@ -8,7 +8,7 @@ class Puzzle13(AoCPuzzle):
         self.your_departure = int(input_data[0])
         self.buses = list(map(lambda b: int(b) if b != 'x' else None, input_data[1].split(',')))
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         wait_times = [
             (bus, bus - (self.your_departure % bus))
             for bus in self.buses
@@ -42,7 +42,7 @@ class Puzzle13(AoCPuzzle):
         # 5. Return the smallest solution
         return total % prod
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         # Chinese Remainder Theorem - https://en.wikipedia.org/wiki/Chinese_remainder_theorem
         divisors_and_remainders = [
             (bus, bus - idx)
@@ -55,26 +55,26 @@ class Puzzle13(AoCPuzzle):
     def test_cases(self, input_data: List[str]) -> int:
 
         self.common(['939', '7,13,x,x,59,x,31,19'])
-        assert self.part1(['939', '7,13,x,x,59,x,31,19']) == 295
-        assert self.part2(['939', '7,13,x,x,59,x,31,19']) == 1068781
+        assert self.part1() == 295
+        assert self.part2() == 1068781
 
         self.common(['1', '17,x,13,19'])
-        assert self.part2(['1', '17,x,13,19']) == 3417
+        assert self.part2() == 3417
 
         self.common(['1', '67,7,59,61'])
-        assert self.part2(['1', '67,7,59,61']) == 754018
+        assert self.part2() == 754018
 
         self.common(['1', '67,x,7,59,61'])
-        assert self.part2(['1', '67,x,7,59,61']) == 779210
+        assert self.part2() == 779210
 
         self.common(['1', '67,7,x,59,61'])
-        assert self.part2(['1', '67,7,x,59,61']) == 1261476
+        assert self.part2() == 1261476
 
         self.common(['1', '1789,37,47,1889'])
-        assert self.part2(['1', '1789,37,47,1889']) == 1202161486
+        assert self.part2() == 1202161486
 
         self.common(input_data)
-        assert self.part1(input_data) == 2845
-        assert self.part2(input_data) == 487905974205117
+        assert self.part1() == 2845
+        assert self.part2() == 487905974205117
 
         return 7

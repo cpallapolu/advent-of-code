@@ -63,7 +63,7 @@ class AoCPuzzle:
                 self.common(self.input_data)
 
                 part_func = getattr(self, f'part{part}')
-                self.results.append(str(part_func(self.input_data)))
+                self.results.append(str(part_func()))
                 self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
             start_time = time()
@@ -92,10 +92,10 @@ class AoCPuzzle:
     def common(self, input_data: Any) -> None:
         pass
 
-    def part1(self, input_data: Any) -> Any:
+    def part1(self) -> Any:
         pass
 
-    def part2(self, input_data: Any) -> Any:
+    def part2(self) -> Any:
         pass
 
     def test_cases(self, input_data: Any) -> Any:

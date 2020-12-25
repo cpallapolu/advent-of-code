@@ -38,7 +38,7 @@ class Puzzle16(AoCPuzzle):
                 return True
         return False
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         error_rate = 0
 
         for nearby_ticket in self.nearby_tickets:
@@ -98,7 +98,7 @@ class Puzzle16(AoCPuzzle):
 
         return positions
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         self.valid_tickets = self.get_valid_tickets()
         self.field_options = self.get_possible_field_options()
         self.field_map = self.find_positions()
@@ -127,7 +127,7 @@ class Puzzle16(AoCPuzzle):
             '38,6,12',
         ]
         self.common(tests)
-        assert self.part1(tests) == 71
+        assert self.part1() == 71
 
         tests = [
             'class: 0-1 or 4-19',
@@ -143,10 +143,11 @@ class Puzzle16(AoCPuzzle):
             '5,14,9',
         ]
         self.common(tests)
-        assert self.part2(tests) == 1
+        assert self.part2() == 1
 
         self.common(input_data)
-        assert self.part1(input_data) == 19060
-        assert self.part2(input_data) == 953713095011
+        assert self.part1() == 19060
+        self.common(input_data)
+        assert self.part2() == 953713095011
 
         return 3

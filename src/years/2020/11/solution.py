@@ -53,7 +53,7 @@ class Puzzle11(AoCPuzzle):
 
         return changed
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         changed = True
 
         while changed is True:
@@ -76,7 +76,7 @@ class Puzzle11(AoCPuzzle):
 
         return adj_seats
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         changed = True
 
         while changed is True:
@@ -99,13 +99,13 @@ class Puzzle11(AoCPuzzle):
         ]
 
         self.common(tests)
-        assert self.part1(tests) == 37
+        assert self.part1() == 37
         self.common(tests)
-        assert self.part2(tests) == 26
+        assert self.part2() == 26
 
         self.common(input_data)
-        assert self.part1(input_data) == 2166
+        assert self.part1() == 2166
         self.common(input_data)
-        assert self.part2(input_data) == 1955
+        assert self.part2() == 1955
 
         return 2

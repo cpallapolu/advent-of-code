@@ -36,10 +36,10 @@ class Puzzle19(AoCPuzzle):
                 for sub_rule in sub_rules
             )
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         return sum(self.check_message(message, [0]) for message in self.messages)
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         self.rules[8], self.rules[11] = [[42], [42, 8]], [[42, 31], [42, 11, 31]]
         return sum(self.check_message(message, [0]) for message in self.messages)
 
@@ -59,10 +59,10 @@ class Puzzle19(AoCPuzzle):
             'aaaabbb',
         ]
         self.common(tests)
-        assert self.part1(tests) == 2
+        assert self.part1() == 2
 
         self.common(tests)
-        assert self.part2(tests) == 2
+        assert self.part2() == 2
 
         tests = [
             '42: 9 14 | 10 1',
@@ -115,15 +115,15 @@ class Puzzle19(AoCPuzzle):
         ]
 
         self.common(tests)
-        assert self.part1(tests) == 3
+        assert self.part1() == 3
 
         self.common(tests)
-        assert self.part2(tests) == 12
+        assert self.part2() == 12
 
         self.common(input_data)
-        assert self.part1(tests) == 120
+        assert self.part1() == 120
 
         self.common(input_data)
-        assert self.part2(tests) == 350
+        assert self.part2() == 350
 
         return 3

@@ -7,7 +7,7 @@ Decks = Dict[str, List[int]]
 
 
 class Puzzle22(AoCPuzzle):
-    def common(self, input_data: List) -> None:
+    def common(self, input_data: List[str]) -> None:
         self.decks = defaultdict(list)
         input_data = '\n'.join(input_data).split('\n\n')
 
@@ -16,8 +16,6 @@ class Puzzle22(AoCPuzzle):
             player_name = lines.pop(0).replace(':', '')
             decks = list(map(int, lines))
             self.decks[player_name] = decks
-
-        # self.total_cards = sum(len(d) for d in self.decks.values())
 
     def total_cards(self, decks: Decks) -> int:
         return sum(len(x) for x in decks.values())
@@ -40,7 +38,7 @@ class Puzzle22(AoCPuzzle):
             multiplier += 1
         return result
 
-    def part1(self, input_data: List) -> int:
+    def part1(self) -> int:
         winner = None
 
         while winner is None:
@@ -87,12 +85,12 @@ class Puzzle22(AoCPuzzle):
 
         return self.get_winner_part2(decks)
 
-    def part2(self, input_data: List) -> int:
+    def part2(self) -> int:
         winner = self.get_winner_part2(self.decks)
 
         return self.get_score(self.decks[winner])
 
-    def test_cases(self, input_data: List) -> int:
+    def test_cases(self, input_data: List[str]) -> int:
         tests = [
             'Player 1:',
             '9',
@@ -109,13 +107,13 @@ class Puzzle22(AoCPuzzle):
             '10',
         ]
         self.common(tests)
-        assert self.part1(tests) == 306
+        assert self.part1() == 306
         self.common(tests)
-        assert self.part2(tests) == 291
+        assert self.part2() == 291
 
         self.common(input_data)
-        assert self.part1(input_data) == 33561
+        assert self.part1() == 33561
         self.common(input_data)
-        assert self.part2(input_data) == 34594
+        assert self.part2() == 34594
 
         return 2

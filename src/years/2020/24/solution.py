@@ -56,7 +56,7 @@ class Puzzle24(AoCPuzzle):
             line = line.replace('e', 'e ').replace('w', 'w ')
             self.tiles.append(Tile(line))
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         for tile in self.tiles:
             tile.final_position()
             self.grid[(tile.x, tile.y)] = not self.grid[(tile.x, tile.y)]
@@ -69,8 +69,8 @@ class Puzzle24(AoCPuzzle):
             for nx, ny in self.neighbors
         ])
 
-    def part2(self, input_data: List[str]) -> int:
-        self.part1(input_data)
+    def part2(self) -> int:
+        self.part1()
 
         for _ in range(100):
             new_grid = defaultdict(bool)
@@ -94,7 +94,7 @@ class Puzzle24(AoCPuzzle):
                 else:
                     new_grid[(x, y)] = tile
             self.grid = new_grid
-        print(sum(self.grid.values()))
+
         return sum(self.grid.values())
 
     def test_cases(self, input_data: List[str]) -> int:
@@ -121,13 +121,13 @@ class Puzzle24(AoCPuzzle):
             'wseweeenwnesenwwwswnew',
         ]
         self.common(tests)
-        assert self.part1(tests) == 10
+        assert self.part1() == 10
         self.common(tests)
-        assert self.part2(tests) == 2208
+        assert self.part2() == 2208
 
         self.common(input_data)
-        assert self.part1(input_data) == 351
+        assert self.part1() == 351
         self.common(input_data)
-        assert self.part2(input_data) == 3869
+        assert self.part2() == 3869
 
         return 2

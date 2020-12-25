@@ -10,7 +10,7 @@ class Puzzle10(AoCPuzzle):
         self.max_rating = max(self.adapters)
         self.target_rating = self.max_rating + 3
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         adapters = self.adapters[:]
         curr_rating = 0
 
@@ -53,7 +53,7 @@ class Puzzle10(AoCPuzzle):
 
         return count
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         curr_rating = 0
         self.cache: Dict[int, int] = defaultdict(int)
         self.adapters = self.adapters[:] + [self.target_rating]
@@ -69,15 +69,15 @@ class Puzzle10(AoCPuzzle):
         ]
 
         self.common(part1_tests_1)
-        assert self.part1(part1_tests_1) == 28
-        assert self.part2(part1_tests_1) == 8
+        assert self.part1() == 28
+        assert self.part2() == 8
 
         self.common(part1_tests_2)
-        assert self.part1(part1_tests_2) == 220
-        assert self.part2(part1_tests_2) == 19208
+        assert self.part1() == 220
+        assert self.part2() == 19208
 
         self.common(input_data)
-        assert self.part1(input_data) == 2775
-        assert self.part2(input_data) == 518344341716992
+        assert self.part1() == 2775
+        assert self.part2() == 518344341716992
 
         return 3

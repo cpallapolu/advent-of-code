@@ -79,12 +79,12 @@ class Puzzle17(AoCPuzzle):
 
         self.pocket = new_pocket
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         for _ in range(6):
             self.cycle()
         return sum(self.pocket.values())
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         for _ in range(6):
             self.cycle2()
         return sum(self.pocket.values())
@@ -96,14 +96,15 @@ class Puzzle17(AoCPuzzle):
             '###',
         ]
         self.common(tests)
-        assert self.part1(tests) == 112
+        assert self.part1() == 112
 
         self.common(tests)
-        assert self.part2(tests) == 848
+        assert self.part2() == 848
 
         self.common(input_data)
-        assert self.part1(input_data) == 298
+        assert self.part1() == 298
+
         self.common(input_data)
-        assert self.part2(input_data) == 1792
+        assert self.part2() == 1792
 
         return 2

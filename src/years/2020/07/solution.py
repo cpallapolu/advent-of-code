@@ -22,7 +22,7 @@ class Puzzle07(AoCPuzzle):
                 self.bags[ob].append(ib)
                 self.inner_bags[ib[1:3]].append(ob)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         bags: Set = set()
 
         q, visited = [('shiny', 'gold')], []
@@ -45,7 +45,7 @@ class Puzzle07(AoCPuzzle):
 
         return bags_count
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         return self.count(('shiny', 'gold'))
 
     def test_cases(self, input_data: List[str]) -> int:
@@ -71,15 +71,15 @@ class Puzzle07(AoCPuzzle):
         ]
 
         self.common(part1_tests)
-        assert self.part1(part1_tests) == 4
+        assert self.part1() == 4
 
         self.common(input_data)
-        assert self.part1(input_data) == 302
+        assert self.part1() == 302
 
         self.common(part2_tests)
-        assert self.part2(part2_tests) == 126
+        assert self.part2() == 126
 
         self.common(input_data)
-        assert self.part2(input_data) == 4165
+        assert self.part2() == 4165
 
         return 3

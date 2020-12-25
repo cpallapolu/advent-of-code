@@ -55,7 +55,7 @@ class Puzzle23(AoCPuzzle):
 
             curr_cup = curr_cup.next
 
-    def part1(self, input_data: str) -> str:
+    def part1(self) -> str:
         for label in range(1, len(self.cups) + 1):
             self.cups_dict[label] = Cup(label)
 
@@ -71,7 +71,7 @@ class Puzzle23(AoCPuzzle):
 
         return ans
 
-    def part2(self, input_data: str) -> int:
+    def part2(self) -> int:
         for idx in range(max(self.cups) + 1, 1000001):
             self.cups.append(idx)
 
@@ -87,18 +87,17 @@ class Puzzle23(AoCPuzzle):
         first = pointer.next
         second = first.next
 
-        print(first.label, second.label)
         return first.label * second.label
 
     def test_cases(self, input_data: str) -> int:
         self.common('389125467')
-        assert self.part1('389125467') == '67384529'
+        assert self.part1() == '67384529'
         self.common('389125467')
-        assert self.part2('389125467') == 149245887792
+        assert self.part2() == 149245887792
 
         self.common(input_data)
-        assert self.part1(input_data) == '45798623'
+        assert self.part1() == '45798623'
         self.common(input_data)
-        assert self.part2(input_data) == 235551949822
+        assert self.part2() == 235551949822
 
         return 2

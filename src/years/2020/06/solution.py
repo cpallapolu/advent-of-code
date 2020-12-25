@@ -14,13 +14,13 @@ class Puzzle06(AoCPuzzle):
                 Counter(''.join(group.split('\n'))),
             ))
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         return sum(
             len(group_answer.keys())
             for _, group_answer in self.group_answers
         )
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         return sum(
             1
             for group_count, group_answer in self.group_answers
@@ -34,17 +34,17 @@ class Puzzle06(AoCPuzzle):
 
         self.common(tests)
         total_tests += len(self.group_answers)
-        assert self.part1(tests) == 11
+        assert self.part1() == 11
 
         self.common(input_data)
-        assert self.part1(input_data) == 6782
+        assert self.part1() == 6782
 
         self.common(tests)
         total_tests += len(self.group_answers)
-        assert self.part2(tests) == 6
+        assert self.part2() == 6
 
         self.common(input_data)
-        assert self.part2(input_data) == 3596
+        assert self.part2() == 3596
 
         total_tests += len(self.group_answers)
 

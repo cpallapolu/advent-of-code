@@ -40,7 +40,7 @@ class Puzzle12(AoCPuzzle):
         elif self.direction == 270:
             self.action('W', value)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         self.pos = Position(0, 0)
 
         for (action, value) in self.navigations:
@@ -67,7 +67,7 @@ class Puzzle12(AoCPuzzle):
             self.pos.x += (self.waypoint.x * value)
             self.pos.y += (self.waypoint.y * value)
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         self.pos = Position(0, 0)
         self.waypoint = Position(10, 1)
 
@@ -78,12 +78,15 @@ class Puzzle12(AoCPuzzle):
 
     def test_cases(self, input_data: List[str]) -> int:
         tests = ['F10', 'N3', 'F7', 'R90', 'F11']
+
         self.common(tests)
-        assert self.part1(tests) == 25
-        assert self.part2(tests) == 286
+        assert self.part1() == 25
+        self.common(tests)
+        assert self.part2() == 286
 
         self.common(input_data)
-        assert self.part1(input_data) == 2847
-        assert self.part2(input_data) == 29839
+        assert self.part1() == 2847
+        self.common(input_data)
+        assert self.part2() == 29839
 
         return 2

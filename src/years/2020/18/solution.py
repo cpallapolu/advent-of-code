@@ -63,45 +63,52 @@ class Puzzle18(AoCPuzzle):
 
         return int(expression)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         return sum(self.evaluate(expression, False) for expression in self.expressions)
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         return sum(self.evaluate(expression, True) for expression in self.expressions)
 
     def test_cases(self, input_data: List[str]) -> int:
         tests = ['1 + 2 * 3 + 4 * 5 + 6']
         self.common(tests)
-        assert self.part1(tests) == 71
-        assert self.part2(tests) == 231
+        assert self.part1() == 71
+        self.common(tests)
+        assert self.part2() == 231
 
         tests = ['1 + (2 * 3) + (4 * (5 + 6))']
         self.common(tests)
-        assert self.part1(tests) == 51
-        assert self.part2(tests) == 51
+        assert self.part1() == 51
+        self.common(tests)
+        assert self.part2() == 51
 
         tests = ['2 * 3 + (4 * 5)']
         self.common(tests)
-        assert self.part1(tests) == 26
-        assert self.part2(tests) == 46
+        assert self.part1() == 26
+        self.common(tests)
+        assert self.part2() == 46
 
         tests = ['5 + (8 * 3 + 9 + 3 * 4 * 3)']
         self.common(tests)
-        assert self.part1(tests) == 437
-        assert self.part2(tests) == 1445
+        assert self.part1() == 437
+        self.common(tests)
+        assert self.part2() == 1445
 
         tests = ['5 * 9 * (7 * 3 * 3 + 9 * 3 + (8 + 6 * 4))']
         self.common(tests)
-        assert self.part1(tests) == 12240
-        assert self.part2(tests) == 669060
+        assert self.part1() == 12240
+        self.common(tests)
+        assert self.part2() == 669060
 
         tests = ['((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2']
         self.common(tests)
-        assert self.part1(tests) == 13632
-        assert self.part2(tests) == 23340
+        assert self.part1() == 13632
+        self.common(tests)
+        assert self.part2() == 23340
 
         self.common(input_data)
-        assert self.part1(tests) == 3885386961962
-        assert self.part2(tests) == 112899558798666
+        assert self.part1() == 3885386961962
+        self.common(input_data)
+        assert self.part2() == 112899558798666
 
         return 7

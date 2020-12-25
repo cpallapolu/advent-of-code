@@ -44,7 +44,7 @@ class Puzzle21(AoCPuzzle):
             for ingredient_option in ingredient_options:
                 self.no_allergen_ingredients.discard(ingredient_option)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         self.check_foods()
 
         num_ingredients = 0
@@ -55,7 +55,7 @@ class Puzzle21(AoCPuzzle):
 
         return num_ingredients
 
-    def part2(self, input_data: List[str]) -> str:
+    def part2(self) -> str:
         self.check_foods()
         ingredient_allergen = defaultdict(str)
         allergens = list(self.allergen_map.keys())
@@ -86,14 +86,14 @@ class Puzzle21(AoCPuzzle):
             'sqjhc mxmxvkd sbzzf (contains fish)',
         ]
         self.common(tests)
-        assert self.part1(tests) == 5
+        assert self.part1() == 5
 
         self.common(tests)
-        assert self.part2(tests) == 'mxmxvkd,sqjhc,fvjkl'
+        assert self.part2() == 'mxmxvkd,sqjhc,fvjkl'
 
         self.common(input_data)
-        assert self.part1(input_data) == 2317
+        assert self.part1() == 2317
 
         self.common(input_data)
-        assert self.part2(input_data) == 'kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz'
+        assert self.part2() == 'kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz'
         return 2

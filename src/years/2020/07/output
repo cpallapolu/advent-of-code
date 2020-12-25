@@ -1,11 +1,11 @@
-07|302|7.073 ms|4165|4.060 ms|3|13.923 ms
+07|302|7.176 ms|4165|2.863 ms|3|11.042 ms
 
 Part 1:
 ============================================
 Result: 302
-Execution time: 7.073 ms
+Execution time: 7.176 ms
 
 Part 2:
 ============================================
 Result: 4165
-Execution time: 4.060 ms
+Execution time: 2.863 ms

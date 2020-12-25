@@ -1,11 +1,11 @@
-21|2317|12.839 ms|kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz|1.707 ms|2|17.851 ms
+21|2317|8.576 ms|kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz|1.362 ms|2|15.236 ms
 
 Part 1:
 ============================================
 Result: 2317
-Execution time: 12.839 ms
+Execution time: 8.576 ms
 
 Part 2:
 ============================================
 Result: kbdgs,sqvv,slkfgq,vgnj,brdd,tpd,csfmb,lrnz
-Execution time: 1.707 ms
+Execution time: 1.362 ms

@@ -37,7 +37,7 @@ class Puzzle14(AoCPuzzle):
 
             self.instructions.append(instruction)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         for instruction in self.instructions:
             for loc, val in instruction.mems:
                 self.mem[loc] = val & instruction.mask_1 | instruction.mask_0
@@ -55,7 +55,7 @@ class Puzzle14(AoCPuzzle):
 
         return []
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         for instruction in self.instructions:
             for loc, val in instruction.mems:
                 loc = loc | instruction.mask_0
@@ -82,9 +82,9 @@ class Puzzle14(AoCPuzzle):
         ]
 
         self.common(part1_tests)
-        assert self.part1(part1_tests) == 165
+        assert self.part1() == 165
         self.common(part1_tests)
-        assert self.part2(part1_tests) == 0
+        assert self.part2() == 0
 
         part2_tests = [
             'mask = 000000000000000000000000000000X1001X',
@@ -93,14 +93,14 @@ class Puzzle14(AoCPuzzle):
             'mem[26] = 1',
         ]
         self.common(part2_tests)
-        assert self.part1(part2_tests) == 51
+        assert self.part1() == 51
         self.common(part2_tests)
-        assert self.part2(part2_tests) == 208
+        assert self.part2() == 208
 
         self.common(input_data)
-        assert self.part1(input_data) == 13105044880745
+        assert self.part1() == 13105044880745
 
         self.common(input_data)
-        assert self.part2(input_data) == 3505392154485
+        assert self.part2() == 3505392154485
 
         return 3

@@ -8,7 +8,7 @@ class Puzzle01(AoCPuzzle):
         self.target = 2020
         self.nums = [int(num) for num in input_data]
 
-    def part1(self, input_data: List[int]) -> int:
+    def part1(self) -> int:
         product = -1
         count_set: Set = set()
 
@@ -23,7 +23,7 @@ class Puzzle01(AoCPuzzle):
 
         return product
 
-    def part2(self, input_data: List[int]) -> int:
+    def part2(self) -> int:
         for i in range(len(self.nums) - 1):
             curr_set = set()
             curr_sum = self.target - self.nums[i]
@@ -39,13 +39,13 @@ class Puzzle01(AoCPuzzle):
         expenses = [1721, 979, 366, 299, 675, 1456]
 
         self.common(expenses)
-        assert self.part1(expenses) == 514579
+        assert self.part1() == 514579
         self.common(input_data)
-        assert self.part1(input_data) == 651651
+        assert self.part1() == 651651
 
         self.common(expenses)
-        assert self.part2(expenses) == 241861950
+        assert self.part2() == 241861950
         self.common(input_data)
-        assert self.part2(input_data) == 214486272
+        assert self.part2() == 214486272
 
         return 2

@@ -33,7 +33,7 @@ class Puzzle04(AoCPuzzle):
 
             self.passports.append(passport)
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         valid_passports = 0
 
         for passport in self.passports:
@@ -44,7 +44,7 @@ class Puzzle04(AoCPuzzle):
 
         return valid_passports
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         valid_passports = 0
 
         for passport in self.passports:
@@ -108,17 +108,17 @@ class Puzzle04(AoCPuzzle):
 
         self.common(part1_tests)
         total_tests += len(self.passports)
-        assert self.part1(part1_tests) == 2
+        assert self.part1() == 2
 
         self.common(input_data)
-        assert self.part1(input_data) == 233
+        assert self.part1() == 233
 
         self.common(part2_tests)
         total_tests += len(self.passports)
-        assert self.part2(part2_tests) == 4
+        assert self.part2() == 4
 
         self.common(input_data)
-        assert self.part2(input_data) == 111
+        assert self.part2() == 111
 
         total_tests += len(self.passports)
 

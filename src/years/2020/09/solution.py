@@ -9,7 +9,7 @@ class Puzzle09(AoCPuzzle):
         self.preamble_length = 25
         self.nums = list(map(int, input_data))
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         for idx, num in enumerate(self.nums[self.preamble_length:]):
             is_valid = False
             for x, y in combinations(self.nums[idx:idx + self.preamble_length], 2):
@@ -24,7 +24,7 @@ class Puzzle09(AoCPuzzle):
 
         return self.invalid_num
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         min_num, max_num = 0, 0
 
         for idx in range(len(self.nums)):
@@ -49,11 +49,11 @@ class Puzzle09(AoCPuzzle):
 
         self.common(tests)
         self.preamble_length = 5
-        assert self.part1(tests) == 127
-        assert self.part2(tests) == 62
+        assert self.part1() == 127
+        assert self.part2() == 62
 
         self.common(input_data)
-        assert self.part1(tests) == 1930745883
-        assert self.part2(tests) == 268878261
+        assert self.part1() == 1930745883
+        assert self.part2() == 268878261
 
         return 2

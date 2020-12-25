@@ -90,7 +90,7 @@ class Puzzle20(AoCPuzzle):
 
         return corners
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         corners = self.find_corners()
 
         return prod([c.id for c in corners])
@@ -170,7 +170,7 @@ class Puzzle20(AoCPuzzle):
                     count += 1
         return count * self.monster_size
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         self.corners = self.find_corners()
         self.build_tile_map()
 
@@ -307,10 +307,13 @@ class Puzzle20(AoCPuzzle):
         ]
 
         self.common(tests)
-        assert self.part1(tests) == 20899048083289
-        assert self.part2(tests) == 273
+        assert self.part1() == 20899048083289
+        self.common(tests)
+        assert self.part2() == 273
 
         self.common(input_data)
-        assert self.part1(input_data) == 7492183537913
+        assert self.part1() == 7492183537913
+        self.common(input_data)
+        assert self.part2() == 2323
 
         return 2

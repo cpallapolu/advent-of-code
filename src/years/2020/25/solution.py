@@ -26,7 +26,7 @@ class Puzzle25(AoCPuzzle):
 
         return encrypted_key
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         card_loop_size = self.get_loop_size(7, self.card_pubkey)
         door_loop_size = self.get_loop_size(7, self.door_pubkey)
 
@@ -35,21 +35,21 @@ class Puzzle25(AoCPuzzle):
 
         return self.card_encrypted_key
 
-    def part2(self, input_data: List[str]) -> str:
+    def part2(self) -> str:
         return 'Congratulations!'
 
     def test_cases(self, input_data: List[str]) -> int:
         tests = ['5764801', '17807724']
         self.common(tests)
-        assert self.part1(tests) == 14897079
+        assert self.part1() == 14897079
         assert self.door_encrypted_key == self.card_encrypted_key
         self.common(tests)
-        assert self.part2(tests) == 'Congratulations!'
+        assert self.part2() == 'Congratulations!'
 
         self.common(input_data)
-        assert self.part1(input_data) == 9177528
+        assert self.part1() == 9177528
         assert self.door_encrypted_key == self.card_encrypted_key
         self.common(input_data)
-        assert self.part2(input_data) == 'Congratulations!'
+        assert self.part2() == 'Congratulations!'
 
         return 2

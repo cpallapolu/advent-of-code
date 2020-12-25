@@ -38,10 +38,10 @@ class Puzzle08(AoCPuzzle):
 
             instruction.executed = True
 
-    def part1(self, input_data: List[str]) -> int:
+    def part1(self) -> int:
         return self.execute_instructions()[0]
 
-    def part2(self, input_data: List[str]) -> int:
+    def part2(self) -> int:
         for instruction in self.instructions:
             if instruction.op == 'acc':
                 continue
@@ -74,11 +74,11 @@ class Puzzle08(AoCPuzzle):
             'acc +6',
         ]
         self.common(part1_tests)
-        assert self.part1(part1_tests) == 5
-        assert self.part2(part1_tests) == 8
+        assert self.part1() == 5
+        assert self.part2() == 8
 
         self.common(input_data)
-        assert self.part1(input_data) == 1684
-        assert self.part2(input_data) == 2188
+        assert self.part1() == 1684
+        assert self.part2() == 2188
 
         return 2

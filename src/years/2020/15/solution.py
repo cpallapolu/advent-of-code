@@ -26,50 +26,50 @@ class Puzzle15(AoCPuzzle):
 
         return self.starting_number
 
-    def part1(self, input_data: str) -> int:
+    def part1(self) -> int:
         return self.take_turns(2020)
 
-    def part2(self, input_data: str) -> int:
+    def part2(self) -> int:
         return self.take_turns(30000000)
 
     def test_cases(self, input_data: str) -> int:
         part1_test = '0,3,6'
         self.common(part1_test)
-        assert self.part1(part1_test) == 436
-        assert self.part2(part1_test) == 175594
+        assert self.part1() == 436
+        assert self.part2() == 175594
 
         part1_test = '1,3,2'
         self.common(part1_test)
-        assert self.part1(part1_test) == 1
-        assert self.part2(part1_test) == 2578
+        assert self.part1() == 1
+        assert self.part2() == 2578
 
         part1_test = '2,1,3'
         self.common(part1_test)
-        assert self.part1(part1_test) == 10
-        assert self.part2(part1_test) == 3544142
+        assert self.part1() == 10
+        assert self.part2() == 3544142
 
         part1_test = '1,2,3'
         self.common(part1_test)
-        assert self.part1(part1_test) == 27
-        assert self.part2(part1_test) == 261214
+        assert self.part1() == 27
+        assert self.part2() == 261214
 
         part1_test = '2,3,1'
         self.common(part1_test)
-        assert self.part1(part1_test) == 78
-        assert self.part2(part1_test) == 6895259
+        assert self.part1() == 78
+        assert self.part2() == 6895259
 
         part1_test = '3,2,1'
         self.common(part1_test)
-        assert self.part1(part1_test) == 438
-        assert self.part2(part1_test) == 18
+        assert self.part1() == 438
+        assert self.part2() == 18
 
         part1_test = '3,1,2'
         self.common(part1_test)
-        assert self.part1(part1_test) == 1836
-        assert self.part2(part1_test) == 362
+        assert self.part1() == 1836
+        assert self.part2() == 362
 
         self.common(input_data)
-        assert self.part1(input_data) == 1522
-        assert self.part2(input_data) == 18234
+        assert self.part1() == 1522
+        assert self.part2() == 18234
 
         return 8
