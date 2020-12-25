@@ -12,8 +12,8 @@ class AoCPuzzle:
         self.day_number = day_number
         self.session = session
 
-        self.input_filename = join(getcwd(), f'src/puzzles/{self.day_number}/input')
-        self.output_filename = join(getcwd(), f'src/puzzles/{self.day_number}/output')
+        self.input_filename = join(getcwd(), f'src/years/{year}/{self.day_number}/input')
+        self.output_filename = join(getcwd(), f'src/years/{year}/{self.day_number}/output')
 
         self.input_data: Any = {}
 
@@ -55,8 +55,6 @@ class AoCPuzzle:
         self.results: List[str] = []
 
         if is_cache is False:
-            # self.delete_output()
-
             self.results.append(str(self.day_number))
 
             for part in range(1, 3):

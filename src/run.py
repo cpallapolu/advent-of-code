@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from datetime import date
 from json import loads
 from os import system as o_system
@@ -5,13 +6,13 @@ from os.path import abspath, dirname, isfile, join
 from pathlib import Path
 from platform import system as p_system
 from shutil import copy
-from sys import argv, exit
+from sys import exit
 from time import time
 from traceback import print_exc
 
 from tabulate import tabulate
 
-import puzzles
+from load_year import load_year
 
 RED = '\033[91m'
 PURPLE = '\033[95m'
@@ -43,53 +44,28 @@ class Puzzle{0}(AoCPuzzle):
 """
 
 
-def main():
-    args = argv
-    puzzle_number = 1
-    run_all_puzzles = False
-    get_cache_results = False
-    curr_puzzle = date.today().day
-
+def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
     src_path = dirname(abspath(__file__))
+    year_path = abspath(join(src_path, f'years/{year}'))
     root_path = abspath(join(src_path, '../'))
 
-    settings_path = join(src_path, 'settings.json')
+    settings_path = join(year_path, 'settings.json')
     settings_default_path = join(src_path, 'settings.default.json')
-
-    if len(args) > 1:
-        input_puzzle = args[1]
-
-        if input_puzzle == 'all':
-            run_all_puzzles = True
-        elif input_puzzle == 'cache':
-            run_all_puzzles = True
-            get_cache_results = True
-        else:
-            puzzle_number = int(args[1])
-    else:
-        puzzle_number = curr_puzzle
-
-    if puzzle_number < 1 or puzzle_number > 25:
-        print('\nGiven Puzzle is out of range 1-25.\n')
-        exit(1)
 
     if isfile(settings_path):
         with open(settings_path, 'r') as s:
             settings = loads(''.join(s.readlines()))
     else:
         copy(settings_default_path, settings_path)
-        print('\nPlease fill in settings.json first!')
+        print(f'\nPlease fill in {settings_path} first!')
         exit(1)
 
     session = settings['session']
-    year = settings['year']
 
-    puzzles_to_run = [puzzle_number]
+    puzzles_to_run = [puzzle]
 
-    last_puzzle_num = curr_puzzle + 1 if curr_puzzle < 26 else 26
-
-    if run_all_puzzles is True:
-        puzzles_to_run = [day for day in range(1, last_puzzle_num)]
+    if all_puzzles is True:
+        puzzles_to_run = [day for day in range(1, 26)]
 
     puzzle_outputs = [
         [
@@ -97,18 +73,18 @@ def main():
             'Part 2', 'Part 2 Time', 'Tests', 'Tests Time',
         ],
     ]
+    puzzles = load_year(year)
 
     for day in [f'{d:02d}' for d in puzzles_to_run]:
         puzzle_class = f'Puzzle{day}'
 
-        if puzzle_class in dir(puzzles):
-            start_time = time()
+        if puzzle_class in puzzles:
             print(f'Attempting to execute AoC puzzle {day}...: ', end='', flush=True)
 
+            start_time = time()
             try:
-                puzzle_class = getattr(puzzles, f'Puzzle{day}')
-                puzzle_instance = puzzle_class(year, day, session)
-                puzzle_instance.execute(get_cache_results)
+                puzzle_instance = puzzles[puzzle_class](year, day, session)
+                puzzle_instance.execute(cache)
 
                 puzzle_outputs.append(puzzle_instance.results)
                 end_time = f'{((time() - start_time) * 1000):.3f}'
@@ -143,7 +119,7 @@ def main():
             stralign='left',
         )
 
-        if run_all_puzzles is True:
+        if all_puzzles is True:
             if p_system() != 'Windows':
                 o_system('clear')
 
@@ -163,4 +139,29 @@ def main():
 
 if __name__ == '__main__':
     """Driver code."""
-    main()
+    year = date.today().year
+    year_choices = [year for year in range(2020, year + 1)]
+
+    day = date.today().day
+    day_choices = [day for day in range(1, 26)]
+
+    parser = ArgumentParser()
+
+    parser.add_argument(
+        '--year', required=False, default=year, type=int, choices=year_choices, help='year to run',
+    )
+    parser.add_argument(
+        '--puzzle', default=0, type=int, choices=day_choices, help='puzzle to run', metavar='num',
+    )
+    parser.add_argument(
+        '--all_puzzles', default=False, type=bool, help='run all puzzles', metavar='bool',
+    )
+    parser.add_argument(
+        '--cache', default=False, type=bool, help='retrun cache results of puzzles', metavar='bool',
+    )
+    args = parser.parse_args()
+
+    if args.puzzle == 0:
+        args.all_puzzles = True
+
+    main(args.year, args.puzzle, args.all_puzzles, args.cache)

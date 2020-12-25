@@ -11,10 +11,10 @@ pip-install: remove-files
 	pip install --no-cache-dir -r ./requirements.txt
 
 run-all-puzzles:
-	python src/run.py all
+	python src/run.py --all_puzzles=True
 
 run-cache-puzzles:
-	python src/run.py cache
+	python src/run.py --cache=True
 
 generate-markdown:
 	python docs/generate_readme.py

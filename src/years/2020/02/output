@@ -1,11 +1,11 @@
-02|620|1.802 ms|727|2.796 ms|1003|4.065 ms
+02|620|5.268 ms|727|3.856 ms|1003|13.165 ms
 
 Part 1:
 ============================================
 Result: 620
-Execution time: 1.802 ms
+Execution time: 5.268 ms
 
 Part 2:
 ============================================
 Result: 727
-Execution time: 2.796 ms
+Execution time: 3.856 ms
