@@ -1,0 +1,16 @@
+autopep8~=1.5
+flake8~=3.7
+flake8-blind-except~=0.1
+flake8-builtins~=1.5
+flake8-commas~=2.0
+flake8-isort~=4.0
+flake8-mypy~=17.8
+flake8-quotes~=3.0
+isort~=5.6
+markdown-include~=0.6
+mypy~=0.770
+pep8-naming~=0.10
+pycodestyle~=2.5
+python-githooks~=1.0
+requests~=2.25
+tabulate~=0.8
