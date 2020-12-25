@@ -1,7 +1,5 @@
-<h1>Advent of Code</h1>
-<p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
-<p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
-<h3>2020 Puzzle Outputs</h3>
+<h1>Advent of Code 2020</h1>
+<h3>Puzzle Outputs</h3>
 <table>
 
 <thead>

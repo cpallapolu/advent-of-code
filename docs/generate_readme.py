@@ -11,7 +11,12 @@ markdown_include = MarkdownInclude(
 )
 docs_path = dirname(abspath(__file__))
 root_path = abspath(join(docs_path, '../'))
+year_path = abspath(join(docs_path, '../src/years/2020/'))
 
 with open(join(docs_path, 'index.md'), 'r') as rf:
     with open(join(root_path, 'README.md'), 'w') as wf:
+        wf.writelines(markdown(rf.read(), extensions=[markdown_include]))
+
+with open(join(docs_path, 'year.md'), 'r') as rf:
+    with open(join(year_path, 'README.md'), 'w') as wf:
         wf.writelines(markdown(rf.read(), extensions=[markdown_include]))
