@@ -5,6 +5,12 @@ from os import listdir
 from os.path import abspath, dirname, join
 from typing import Any, Dict
 
+ignore_files = ['__', 'settings', 'README', 'OUTPUTS_TABLE']
+
+
+def is_ignored_file(f):
+    return all([f.startswith(ignore_file) is False for ignore_file in ignore_files])
+
 
 def load_year(year: int) -> Dict[str, Any]:
     puzzles = {}
@@ -13,7 +19,7 @@ def load_year(year: int) -> Dict[str, Any]:
     solutions = [
         f'{f}.solution'
         for f in listdir(years_path)
-        if f.startswith('__') is False and f.startswith('settings') is False
+        if is_ignored_file(f) is True
     ]
 
     for solution in solutions:

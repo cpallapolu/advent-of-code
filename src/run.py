@@ -51,6 +51,7 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
 
     settings_path = join(year_path, 'settings.json')
     settings_default_path = join(src_path, 'settings.default.json')
+    output_table_path = join(root_path, './docs/output_table.md')
 
     if isfile(settings_path):
         with open(settings_path, 'r') as s:
@@ -125,7 +126,7 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
 
         print(table)
 
-        with open(join(root_path, 'docs/output_table.md'), 'w') as f:
+        with open(join(root_path, output_table_path), 'w') as f:
             f.writelines(
                 tabulate(
                     puzzle_outputs,
@@ -145,20 +146,21 @@ if __name__ == '__main__':
     day = date.today().day
     day_choices = [day for day in range(1, 26)]
 
-    parser = ArgumentParser()
+    parser = ArgumentParser(description='Advent of Code')
 
     parser.add_argument(
-        '--year', required=False, default=year, type=int, choices=year_choices, help='year to run',
+        '--year', default=year, type=int, choices=year_choices, help='year to run', metavar='num',
     )
     parser.add_argument(
         '--puzzle', default=0, type=int, choices=day_choices, help='puzzle to run', metavar='num',
     )
     parser.add_argument(
-        '--all_puzzles', default=False, type=bool, help='run all puzzles', metavar='bool',
+        '--all_puzzles', action='store_true', help='run all puzzles', default=False,
     )
     parser.add_argument(
-        '--cache', default=False, type=bool, help='retrun cache results of puzzles', metavar='bool',
+        '--cache', action='store_true', help='retrun cache results of puzzles', default=False,
     )
+
     args = parser.parse_args()
 
     if args.puzzle == 0:
