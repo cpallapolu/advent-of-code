@@ -26,6 +26,7 @@ class Puzzle05(AoCPuzzle):
         for ms in missing_seats:
             if ms - 1 not in missing_seats and ms + 1 not in missing_seats:
                 return ms
+        return 0
 
     def test_cases(self, input_data: List[str]) -> int:
         tests = ['FBFBBFFRLR', 'BFFFBBFRRR', 'FFFBBBFRRR', 'BBFFBBFRLL']

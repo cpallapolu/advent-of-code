@@ -7,7 +7,7 @@
 <tr><td>02 </td><td>620           </td><td>2.063 ms     </td><td>727                                       </td><td>2.425 ms      </td><td>1003   </td><td>4.942 ms     </td></tr>
 <tr><td>03 </td><td>218           </td><td>0.083 ms     </td><td>3847183340                                </td><td>0.341 ms      </td><td>2      </td><td>0.434 ms     </td></tr>
 <tr><td>04 </td><td>233           </td><td>1.090 ms     </td><td>111                                       </td><td>1.989 ms      </td><td>300    </td><td>3.356 ms     </td></tr>
-<tr><td>05 </td><td>959           </td><td>1.316 ms     </td><td>527                                       </td><td>6.797 ms      </td><td>2      </td><td>10.564 ms    </td></tr>
+<tr><td>05 </td><td>959           </td><td>2.028 ms     </td><td>527                                       </td><td>8.046 ms      </td><td>2      </td><td>13.031 ms    </td></tr>
 <tr><td>06 </td><td>6782          </td><td>2.363 ms     </td><td>3596                                      </td><td>2.418 ms      </td><td>466    </td><td>5.232 ms     </td></tr>
 <tr><td>07 </td><td>302           </td><td>7.176 ms     </td><td>4165                                      </td><td>2.863 ms      </td><td>3      </td><td>11.042 ms    </td></tr>
 <tr><td>08 </td><td>1684          </td><td>0.753 ms     </td><td>2188                                      </td><td>24.385 ms     </td><td>2      </td><td>24.436 ms    </td></tr>
