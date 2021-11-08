@@ -32,11 +32,11 @@ class Puzzle{0}(AoCPuzzle):
 
     def part1(self, input_data: Any) -> int:
         print('day{0} part 1 in day{0}')
-        return {0}
+        return 1
 
     def part2(self, input_data: Any) -> int:
         print('day{0} part 2 in day{0}')
-        return {0}
+        return 2
 
     def test_cases(self, input_data: Any) -> int:
         print('day{0} test_cases in day{0}')
@@ -99,8 +99,8 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
                 print()
         else:
             template = base_template.format(day)
-            puzzle_dir = join(src_path, 'puzzles/{}'.format(day))
-            puzzle_solution = join(src_path, 'puzzles/{}/solution.py'.format(day))
+            puzzle_dir = join(src_path, f'{day}')
+            puzzle_solution = join(src_path, f'{day}/solution.py')
 
             puzzle_path = Path(puzzle_dir)
             puzzle_path.mkdir()
@@ -152,18 +152,15 @@ if __name__ == '__main__':
         '--year', default=year, type=int, choices=year_choices, help='year to run', metavar='num',
     )
     parser.add_argument(
-        '--puzzle', default=0, type=int, choices=day_choices, help='puzzle to run', metavar='num',
+        '--puzzle', default=1, type=int, choices=day_choices, help='puzzle to run', metavar='num',
     )
     parser.add_argument(
-        '--all_puzzles', action='store_true', help='run all puzzles', default=False,
+        '--all_puzzles', default=False, action='store_true', help='run all puzzles',
     )
     parser.add_argument(
-        '--cache', action='store_true', help='retrun cache results of puzzles', default=False,
+        '--cache', default=False, action='store_true', help='retrun cache results of puzzles',
     )
 
     args = parser.parse_args()
-
-    if args.puzzle == 0:
-        args.all_puzzles = True
 
     main(args.year, args.puzzle, args.all_puzzles, args.cache)

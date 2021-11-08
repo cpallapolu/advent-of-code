@@ -14,3 +14,4 @@ pycodestyle~=2.5
 python-githooks~=1.0
 requests~=2.25
 tabulate~=0.8
+types-tabulate~=0.8

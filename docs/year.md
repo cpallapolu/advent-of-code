@@ -1,5 +1,4 @@
-
-# Advent of Code 2020
+{{heading}}
 
 ### Puzzle Outputs
 

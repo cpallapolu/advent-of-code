@@ -1,3 +1,4 @@
+from datetime import datetime
 from os.path import abspath, dirname, join
 
 from markdown import markdown
@@ -9,14 +10,36 @@ markdown_include = MarkdownInclude(
         'base_path': './docs/',
     },
 )
+curr_year = datetime.now().year
 docs_path = dirname(abspath(__file__))
 root_path = abspath(join(docs_path, '../'))
-year_path = abspath(join(docs_path, '../src/years/2020/'))
+year_path = abspath(join(docs_path, f'../src/years/{curr_year}/'))
+
+
+def previous_years():
+    arr = ['### Years']
+
+    for year in range(2020, curr_year + 1):
+        complete_path = f'./src/years/{year}/README.md'
+
+        arr.append(f'[{year} Puzzles]({complete_path})')
+
+    return '\n\n'.join(arr)
+
 
 with open(join(docs_path, 'index.md'), 'r') as rf:
+    index_data = rf.read()
+
+    index_data = index_data.replace('{{previous_years}}', previous_years())
+    index_data = index_data.replace('{{current_year_outputs}}', f'### {curr_year} Puzzle Outputs')
+
     with open(join(root_path, 'README.md'), 'w') as wf:
-        wf.writelines(markdown(rf.read(), extensions=[markdown_include]))
+        wf.writelines(markdown(index_data, extensions=[markdown_include]))
 
 with open(join(docs_path, 'year.md'), 'r') as rf:
+    year_data = rf.read()
+
+    year_data = year_data.replace('{{heading}}', f'# Advent of Code {curr_year}')
+
     with open(join(year_path, 'README.md'), 'w') as wf:
-        wf.writelines(markdown(rf.read(), extensions=[markdown_include]))
+        wf.writelines(markdown(year_data, extensions=[markdown_include]))
