@@ -3,6 +3,8 @@ from os.path import isfile, join
 from time import time
 from typing import Any, List
 
+from bs4 import BeautifulSoup
+from markdownify import markdownify
 from requests import get
 
 
@@ -12,10 +14,34 @@ class AoCPuzzle:
         self.day_number = day_number
         self.session = session
 
+        self.readme_filename = join(getcwd(), f'src/years/{year}/{self.day_number}/README.md')
         self.input_filename = join(getcwd(), f'src/years/{year}/{self.day_number}/input')
         self.output_filename = join(getcwd(), f'src/years/{year}/{self.day_number}/output')
 
         self.input_data: Any = {}
+
+    def download_problem_statement(self) -> None:
+        if isfile(self.readme_filename):
+            return
+
+        print(f'Downloading input file for day {self.day_number}...')
+        dl_url = f'https://adventofcode.com/{self.year}/day/{int(str(self.day_number))}'
+
+        response = get(dl_url, cookies={'session': self.session})
+        status_code, text = response.status_code, response.text
+
+        if status_code == 200:
+            self.input_data = text
+
+            soup = BeautifulSoup(text, 'html.parser')
+            articles = soup.find_all('article')
+
+            with open(self.readme_filename, 'w') as f:
+                f.write(markdownify(''.join(map(str, articles))))
+        else:
+            raise ConnectionError(
+                f'Unable to download input data. Error code {status_code} : {text}',
+            )
 
     def download_input(self) -> None:
         if isfile(self.input_filename):
@@ -49,6 +75,7 @@ class AoCPuzzle:
             remove(self.output_filename)
 
     def execute(self, is_cache: bool):
+        self.download_problem_statement()
         self.download_input()
         self.load_input()
 

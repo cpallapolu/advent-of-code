@@ -21,20 +21,21 @@ GREEN = '\033[92m'
 BOLD = '\033[1m'
 
 base_template = """
-from aocpuzzle import AoCPuzzle
 
 from typing import Any
+
+from aocpuzzle import AoCPuzzle
 
 
 class Puzzle{0}(AoCPuzzle):
     def common(self, input_data: Any) -> None:
         print('day{0} common in day{0}')
 
-    def part1(self, input_data: Any) -> int:
+    def part1(self) -> int:
         print('day{0} part 1 in day{0}')
         return 1
 
-    def part2(self, input_data: Any) -> int:
+    def part2(self) -> int:
         print('day{0} part 2 in day{0}')
         return 2
 
@@ -99,8 +100,8 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
                 print()
         else:
             template = base_template.format(day)
-            puzzle_dir = join(src_path, f'{day}')
-            puzzle_solution = join(src_path, f'{day}/solution.py')
+            puzzle_dir = join(year_path, f'{day}')
+            puzzle_solution = join(year_path, f'{day}/solution.py')
 
             puzzle_path = Path(puzzle_dir)
             puzzle_path.mkdir()
