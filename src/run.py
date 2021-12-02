@@ -22,13 +22,11 @@ BOLD = '\033[1m'
 
 base_template = """
 
-from typing import Any
-
 from aocpuzzle import AoCPuzzle
 
 
 class Puzzle{0}(AoCPuzzle):
-    def common(self, input_data: Any) -> None:
+    def common(self, input_data: list[str]) -> None:
         print('day{0} common in day{0}')
 
     def part1(self) -> int:
@@ -39,9 +37,13 @@ class Puzzle{0}(AoCPuzzle):
         print('day{0} part 2 in day{0}')
         return 2
 
-    def test_cases(self, input_data: Any) -> int:
+    def test_cases(self, input_data: list[str]) -> int:
         print('day{0} test_cases in day{0}')
-        return 2
+        tests = [[]]
+        for test in tests:
+            self.common(test)
+
+        return len(tests) + 1
 """
 
 
@@ -153,7 +155,7 @@ if __name__ == '__main__':
         '--year', default=year, type=int, choices=year_choices, help='year to run', metavar='num',
     )
     parser.add_argument(
-        '--puzzle', default=1, type=int, choices=day_choices, help='puzzle to run', metavar='num',
+        '--puzzle', default=day, type=int, choices=day_choices, help='puzzle to run', metavar='num',
     )
     parser.add_argument(
         '--all_puzzles', default=False, action='store_true', help='run all puzzles',
