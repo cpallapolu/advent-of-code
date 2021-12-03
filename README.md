@@ -9,13 +9,13 @@
 
 <thead>
 
-<tr><th>#  </th><th>Part 1  </th><th>Part 1 Time  </th><th>Part 2    </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time  </th></tr>
+<tr><th>#  </th><th>Part 1  </th><th>Part 1 Time  </th><th>Part 2  </th><th>Part 2 Time  </th><th>Tests  </th><th>Tests Time  </th></tr>
 
 </thead>
 
 <tbody>
 
-<tr><td>02 </td><td>2147104 </td><td>1.224 ms     </td><td>2044620088</td><td>1.153 ms     </td><td>2      </td><td>1.993 ms    </td></tr>
+<tr><td>03 </td><td>2724524 </td><td>2.481 ms     </td><td>2775870 </td><td>1.460 ms     </td><td>2      </td><td>3.652 ms    </td></tr>
 
 </tbody>
 
