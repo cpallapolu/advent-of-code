@@ -15,7 +15,7 @@
 
 <tbody>
 
-<tr><td>03 </td><td>2724524 </td><td>2.481 ms     </td><td>2775870 </td><td>1.460 ms     </td><td>2      </td><td>3.652 ms    </td></tr>
+<tr><td>04 </td><td>82440   </td><td>8.221 ms     </td><td>20774   </td><td>11.273 ms    </td><td>2      </td><td>16.794 ms   </td></tr>
 
 </tbody>
 
