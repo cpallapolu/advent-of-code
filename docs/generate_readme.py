@@ -20,7 +20,7 @@ def previous_years():
     arr = ['### Years']
 
     for year in range(2020, curr_year + 1):
-        complete_path = f'./src/years/{year}/README.md'
+        complete_path = f'./src/years/{year}'
 
         arr.append(f'[{year} Puzzles]({complete_path})')
 
