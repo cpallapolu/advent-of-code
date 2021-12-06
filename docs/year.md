@@ -4,8 +4,8 @@
 
 {!./output_table.md!}
 
-### Docker Command:
+### Running Puzzles:
 
 ```
-docker build --tag 'cpallapolu/aoc:v1' .
+{{docker_command}}
 ```

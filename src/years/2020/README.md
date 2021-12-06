@@ -64,5 +64,5 @@
 
 </table>
 
-<h3>Docker Command:</h3>
-<p><code>docker build --tag 'cpallapolu/aoc:v1' .</code></p>
+<h3>Running Puzzles:</h3>
+<p><code>make year=2020 run-year-puzzles</code></p>

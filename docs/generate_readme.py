@@ -32,6 +32,7 @@ with open(join(docs_path, 'index.md'), 'r') as rf:
 
     index_data = index_data.replace('{{previous_years}}', previous_years())
     index_data = index_data.replace('{{current_year_outputs}}', f'### {curr_year} Puzzle Outputs')
+    index_data = index_data.replace('{{docker_command}}', f'make year={curr_year} run-year-puzzles')
 
     with open(join(root_path, 'README.md'), 'w') as wf:
         wf.writelines(markdown(index_data, extensions=[markdown_include]))
@@ -40,6 +41,7 @@ with open(join(docs_path, 'year.md'), 'r') as rf:
     year_data = rf.read()
 
     year_data = year_data.replace('{{heading}}', f'# Advent of Code {curr_year}')
+    year_data = year_data.replace('{{docker_command}}', f'make year={curr_year} run-year-puzzles')
 
     with open(join(year_path, 'README.md'), 'w') as wf:
         wf.writelines(markdown(year_data, extensions=[markdown_include]))

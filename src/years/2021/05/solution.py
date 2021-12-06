@@ -55,7 +55,6 @@ class Puzzle05(AoCPuzzle):
         ])
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day05 test_cases in day05')
         tests = [
             [
                 '0,9 -> 5,9',

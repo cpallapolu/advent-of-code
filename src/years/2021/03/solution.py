@@ -72,7 +72,6 @@ class Puzzle03(AoCPuzzle):
         return self.oxygen_generator_rating * self.co2_scrubber_rating
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day03 test_cases in day03')
         tests = [
             [
                 '00100', '11110', '10110', '10111', '10101', '01111',

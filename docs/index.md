@@ -9,8 +9,8 @@ More information on [adventofcode.com](http://adventofcode.com/)
 
 {!./output_table.md!}
 
-### Docker Command:
+### Running Puzzles:
 
 ```
-docker build --tag 'cpallapolu/aoc:v1' .
+{{docker_command}}
 ```

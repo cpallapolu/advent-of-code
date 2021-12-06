@@ -13,6 +13,9 @@ pip-install: remove-files
 run-all-puzzles:
 	python src/run.py --all_puzzles
 
+run-year-puzzles:
+	python src/run.py --all_puzzles --year $(year)
+
 run-cache-puzzles:
 	python src/run.py --cache
 
