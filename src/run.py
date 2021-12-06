@@ -69,7 +69,7 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
     puzzles_to_run = [puzzle]
 
     if all_puzzles is True:
-        puzzles_to_run = [day for day in range(1, 26)]
+        puzzles_to_run = [day for day in range(1, min(puzzle + 1, 26))]
 
     puzzle_outputs = [
         [
@@ -165,5 +165,8 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
+
+    if args.cache is True:
+        args.all_puzzles = True
 
     main(args.year, args.puzzle, args.all_puzzles, args.cache)

@@ -10,6 +10,16 @@
 
 <tbody>
 
+<tr><td>01 </td><td>1709    </td><td>0.414 ms     </td><td>1761         </td><td>1.203 ms     </td><td>2      </td><td>1.017 ms    </td></tr>
+
+<tr><td>02 </td><td>2147104 </td><td>1.224 ms     </td><td>2044620088   </td><td>1.153 ms     </td><td>2      </td><td>1.993 ms    </td></tr>
+
+<tr><td>03 </td><td>2724524 </td><td>2.481 ms     </td><td>2775870      </td><td>1.460 ms     </td><td>2      </td><td>3.652 ms    </td></tr>
+
+<tr><td>04 </td><td>82440   </td><td>8.221 ms     </td><td>20774        </td><td>11.273 ms    </td><td>2      </td><td>16.794 ms   </td></tr>
+
+<tr><td>05 </td><td>5294    </td><td>181.420 ms   </td><td>21698        </td><td>109.544 ms   </td><td>2      </td><td>280.536 ms  </td></tr>
+
 <tr><td>06 </td><td>360610  </td><td>0.215 ms     </td><td>1631629590423</td><td>0.403 ms     </td><td>2      </td><td>1.008 ms    </td></tr>
 
 </tbody>
