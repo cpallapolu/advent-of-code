@@ -28,15 +28,19 @@ class Puzzle07(AoCPuzzle):
         return self.calculate_fuel(False)
 
     def test_cases(self, input_data: str) -> int:
-        tests = [
-            '16,1,2,0,4,2,7,1,2,14',
+        tests: list[dict] = [
+            {
+                'input_data': '16,1,2,0,4,2,7,1,2,14',
+                'part1': 37,
+                'part2': 168,
+            },
         ]
 
         for test in tests:
-            self.common(test)
-            assert self.part1() == 37
-            self.common(test)
-            assert self.part2() == 168
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 340056

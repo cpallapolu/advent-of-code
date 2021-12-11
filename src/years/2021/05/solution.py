@@ -55,25 +55,29 @@ class Puzzle05(AoCPuzzle):
         ])
 
     def test_cases(self, input_data: list[str]) -> int:
-        tests = [
-            [
-                '0,9 -> 5,9',
-                '8,0 -> 0,8',
-                '9,4 -> 3,4',
-                '2,2 -> 2,1',
-                '7,0 -> 7,4',
-                '6,4 -> 2,0',
-                '0,9 -> 2,9',
-                '3,4 -> 1,4',
-                '0,0 -> 8,8',
-                '5,5 -> 8,2',
-            ],
+        tests: list[dict] = [
+            {
+                'input_data': [
+                    '0,9 -> 5,9',
+                    '8,0 -> 0,8',
+                    '9,4 -> 3,4',
+                    '2,2 -> 2,1',
+                    '7,0 -> 7,4',
+                    '6,4 -> 2,0',
+                    '0,9 -> 2,9',
+                    '3,4 -> 1,4',
+                    '0,0 -> 8,8',
+                    '5,5 -> 8,2',
+                ],
+                'part1': 5,
+                'part2': 12,
+            },
         ]
         for test in tests:
-            self.common(test)
-            assert self.part1() == 5
-            self.common(test)
-            assert self.part2() == 12
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 5294

@@ -39,14 +39,18 @@ class Puzzle06(AoCPuzzle):
         return self.reproduce(256, self.fishes)
 
     def test_cases(self, input_data: str) -> int:
-        tests = [
-            '3,4,3,1,2',
+        tests: list[dict] = [
+            {
+                'input_data': '3,4,3,1,2',
+                'part1': 5934,
+                'part2': 26984457539,
+            },
         ]
         for test in tests:
-            self.common(test)
-            assert self.part1() == 5934
-            self.common(test)
-            assert self.part2() == 26984457539
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 360610

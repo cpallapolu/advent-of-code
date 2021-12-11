@@ -29,15 +29,22 @@ class Puzzle01(AoCPuzzle):
         return self.__calculate_increases(self.__get_windows_sum())
 
     def test_cases(self, input_data: list[str]) -> int:
-        tests = [
-            ['199', '200', '208', '210', '200', '207', '240', '269', '260', '263'],
+        tests: list[dict] = [
+            {
+                'input_data': [
+                    '199', '200', '208', '210', '200',
+                    '207', '240', '269', '260', '263',
+                ],
+                'part1': 7,
+                'part2': 5,
+            },
         ]
 
         for test in tests:
-            self.common(test)
-            assert self.part1() == 7
-            self.common(test)
-            assert self.part2() == 5
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 1709

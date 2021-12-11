@@ -72,21 +72,30 @@ class Puzzle03(AoCPuzzle):
         return self.oxygen_generator_rating * self.co2_scrubber_rating
 
     def test_cases(self, input_data: list[str]) -> int:
-        tests = [
-            [
-                '00100', '11110', '10110', '10111', '10101', '01111',
-                '00111', '11100', '10000', '11001', '00010', '01010',
-            ],
+        tests: list[dict] = [
+            {
+                'input_data': [
+                    '00100', '11110', '10110', '10111', '10101', '01111',
+                    '00111', '11100', '10000', '11001', '00010', '01010',
+                ],
+                'part1': 198,
+                'gamma': 22,
+                'epsilon': 9,
+                'part2': 230,
+                'oxygen_generator_rating': 23,
+                'co2_scrubber_rating': 10,
+            },
         ]
         for test in tests:
-            self.common(test)
-            assert self.part1() == 198
-            assert self.gamma == 22
-            assert self.epsilon == 9
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            assert self.gamma == test['gamma']
+            assert self.epsilon == test['epsilon']
 
-            assert self.part2() == 230
-            assert self.oxygen_generator_rating == 23
-            assert self.co2_scrubber_rating == 10
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
+            assert self.oxygen_generator_rating == test['oxygen_generator_rating']
+            assert self.co2_scrubber_rating == test['co2_scrubber_rating']
 
             self.common(input_data)
             assert self.part1() == 2724524

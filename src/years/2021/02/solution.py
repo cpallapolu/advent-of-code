@@ -65,22 +65,26 @@ class Puzzle02(AoCPuzzle):
         return self.submarine.horizontal_position * self.submarine.depth
 
     def test_cases(self, input_data: list[str]) -> int:
-        tests = [
-            [
-                'forward 5',
-                'down 5',
-                'forward 8',
-                'up 3',
-                'down 8',
-                'forward 2',
-            ],
+        tests: list[dict] = [
+            {
+                'input_data': [
+                    'forward 5',
+                    'down 5',
+                    'forward 8',
+                    'up 3',
+                    'down 8',
+                    'forward 2',
+                ],
+                'part1': 150,
+                'part2': 900,
+            },
         ]
 
         for test in tests:
-            self.common(test)
-            assert self.part1() == 150
-            self.common(test)
-            assert self.part2() == 900
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 2147104

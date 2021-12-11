@@ -39,9 +39,18 @@ class Puzzle{0}(AoCPuzzle):
 
     def test_cases(self, input_data: list[str]) -> int:
         print('day{0} test_cases in day{0}')
-        tests = [[]]
+        tests: list[dict] = [
+            {
+                'input_data': [],
+                'part1': 1,
+                'part2': 2,
+            },
+        ]
         for test in tests:
-            self.common(test)
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         return len(tests) + 1
 """

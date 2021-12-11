@@ -64,20 +64,24 @@ class Puzzle09(AoCPuzzle):
         return prod(sorted(basin_sizes)[-3:])
 
     def test_cases(self, input_data: list[str]) -> int:
-        tests = [
-            [
-                '2199943210',
-                '3987894921',
-                '9856789892',
-                '8767896789',
-                '9899965678',
-            ],
+        tests: list[dict] = [
+            {
+                'input_data': [
+                    '2199943210',
+                    '3987894921',
+                    '9856789892',
+                    '8767896789',
+                    '9899965678',
+                ],
+                'part1': 15,
+                'part2': 1134,
+            },
         ]
         for test in tests:
-            self.common(test)
-            assert self.part1() == 15
-            self.common(test)
-            assert self.part2() == 1134
+            self.common(test['input_data'])
+            assert self.part1() == test['part1']
+            self.common(test['input_data'])
+            assert self.part2() == test['part2']
 
         self.common(input_data)
         assert self.part1() == 572
