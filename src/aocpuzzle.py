@@ -105,7 +105,7 @@ class AoCPuzzle:
         with open(self.output_filename, 'w') as output_file:
             print('|'.join(self.results), file=output_file)
             print('\nPart 1:\n============================================', file=output_file)
-            print(f'Result: {self.results[2]}', file=output_file)
+            print(f'Result: {self.results[1]}', file=output_file)
             print(f'Execution time: {self.results[2]}', file=output_file)
             print('\nPart 2:\n============================================', file=output_file)
             print(f'Result: {self.results[3]}', file=output_file)

@@ -1,11 +1,11 @@
-04|20774|7.711 ms|2|25.031 ms|82440|11.198 ms
+04|20774|5.863 ms|2|15.079 ms|82440|6.475 ms
 
 Part 1:
 ============================================
-Result: 7.711 ms
-Execution time: 7.711 ms
+Result: 20774
+Execution time: 5.863 ms
 
 Part 2:
 ============================================
 Result: 2
-Execution time: 25.031 ms
+Execution time: 15.079 ms

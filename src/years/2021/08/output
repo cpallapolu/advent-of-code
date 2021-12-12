@@ -1,11 +1,11 @@
-08|1020159|7.402 ms|2|7.177 ms|362|4.834 ms
+08|1020159|7.388 ms|2|7.247 ms|362|3.915 ms
 
 Part 1:
 ============================================
-Result: 7.402 ms
-Execution time: 7.402 ms
+Result: 1020159
+Execution time: 7.388 ms
 
 Part 2:
 ============================================
 Result: 2
-Execution time: 7.177 ms
+Execution time: 7.247 ms

@@ -1,11 +1,11 @@
-11|320|44.434 ms|3|103.324 ms|1642|14.066 ms
+11|320|42.102 ms|3|102.234 ms|1642|14.158 ms
 
 Part 1:
 ============================================
-Result: 44.434 ms
-Execution time: 44.434 ms
+Result: 320
+Execution time: 42.102 ms
 
 Part 2:
 ============================================
 Result: 3
-Execution time: 103.324 ms
+Execution time: 102.234 ms
