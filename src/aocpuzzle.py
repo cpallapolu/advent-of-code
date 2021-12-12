@@ -97,10 +97,9 @@ class AoCPuzzle:
                 self.results.append(str(part_func()))
                 self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
+            self.results = self.results[:1] + self.results[3:] + self.results[1:3]
         else:
             self.results = self.get_cache_results()
-
-        self.results = self.results[:1] + self.results[3:] + self.results[1:3]
 
         with open(self.output_filename, 'w') as output_file:
             print('|'.join(self.results), file=output_file)
