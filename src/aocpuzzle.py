@@ -84,6 +84,10 @@ class AoCPuzzle:
         if is_cache is False:
             self.results.append(str(self.day_number))
 
+            start_time = time()
+            self.results.append(str(self.test_cases(self.input_data)))
+            self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
+
             for part in range(1, 3):
                 start_time = time()
 
@@ -93,16 +97,15 @@ class AoCPuzzle:
                 self.results.append(str(part_func()))
                 self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
-            start_time = time()
-            self.results.append(str(self.test_cases(self.input_data)))
-            self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
         else:
             self.results = self.get_cache_results()
+
+        self.results = self.results[:1] + self.results[3:] + self.results[1:3]
 
         with open(self.output_filename, 'w') as output_file:
             print('|'.join(self.results), file=output_file)
             print('\nPart 1:\n============================================', file=output_file)
-            print(f'Result: {self.results[1]}', file=output_file)
+            print(f'Result: {self.results[2]}', file=output_file)
             print(f'Execution time: {self.results[2]}', file=output_file)
             print('\nPart 2:\n============================================', file=output_file)
             print(f'Result: {self.results[3]}', file=output_file)

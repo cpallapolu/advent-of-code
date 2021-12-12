@@ -40,11 +40,11 @@ class Puzzle{0}(AoCPuzzle):
     def test_cases(self, input_data: list[str]) -> int:
         print('day{0} test_cases in day{0}')
         tests: list[dict] = [
-            {
+            {{
                 'input_data': [],
                 'part1': 1,
                 'part2': 2,
-            },
+            }},
         ]
         for test in tests:
             self.common(test['input_data'])
@@ -118,7 +118,7 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
             puzzle_path.mkdir()
 
             with open(puzzle_solution, 'w') as f:
-                f.writelines(template.format(day))
+                f.writelines(template)
 
             print(f'\nClass for day {day} created. Happy Coding!!\n')
             exit(1)

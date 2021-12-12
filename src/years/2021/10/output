@@ -1,11 +1,11 @@
-10|271245|2.964 ms|1685293086|2.758 ms|2|5.998 ms
+10|1685293086|2.758 ms|2|5.998 ms|271245|2.964 ms
 
 Part 1:
 ============================================
-Result: 271245
-Execution time: 2.964 ms
+Result: 2.758 ms
+Execution time: 2.758 ms
 
 Part 2:
 ============================================
-Result: 1685293086
-Execution time: 2.758 ms
+Result: 2
+Execution time: 5.998 ms
