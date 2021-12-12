@@ -1,11 +1,11 @@
-01|1761|1.122 ms|2|1.379 ms|1709|0.358 ms
+01|1761|0.727 ms|2|1.022 ms|1709|0.286 ms
 
 Part 1:
 ============================================
-Result: 1.122 ms
-Execution time: 1.122 ms
+Result: 0.727 ms
+Execution time: 0.727 ms
 
 Part 2:
 ============================================
 Result: 2
-Execution time: 1.379 ms
+Execution time: 1.022 ms

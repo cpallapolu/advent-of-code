@@ -1,11 +1,11 @@
-03|2775870|1.304 ms|2|3.991 ms|2724524|2.579 ms
+03|2775870|1.972 ms|2|3.010 ms|2724524|3.499 ms
 
 Part 1:
 ============================================
-Result: 1.304 ms
-Execution time: 1.304 ms
+Result: 1.972 ms
+Execution time: 1.972 ms
 
 Part 2:
 ============================================
 Result: 2
-Execution time: 3.991 ms
+Execution time: 3.010 ms

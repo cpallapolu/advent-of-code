@@ -1,11 +1,11 @@
-09|847044|82.484 ms|2|100.105 ms|572|23.099 ms
+09|847044|65.216 ms|2|96.517 ms|572|21.980 ms
 
 Part 1:
 ============================================
-Result: 82.484 ms
-Execution time: 82.484 ms
+Result: 65.216 ms
+Execution time: 65.216 ms
 
 Part 2:
 ============================================
 Result: 2
-Execution time: 100.105 ms
+Execution time: 96.517 ms
