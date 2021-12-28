@@ -24,7 +24,7 @@ class AoCPuzzle:
         if isfile(self.readme_filename):
             return
 
-        print(f'Downloading input file for day {self.day_number}...')
+        print(f'Downloading problem statement for day {self.day_number}...')
         dl_url = f'https://adventofcode.com/{self.year}/day/{int(str(self.day_number))}'
 
         response = get(dl_url, cookies={'session': self.session})
