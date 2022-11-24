@@ -152,26 +152,18 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
 
 if __name__ == '__main__':
     """Driver code."""
-    year = date.today().year
-    year_choices = [year for year in range(2020, year + 1)]
+    curr_year = date.today().year
+    year_choices = [year for year in range(2020, curr_year + 1)]
 
     day = date.today().day
     day_choices = [day for day in range(1, 26)]
 
     parser = ArgumentParser(description='Advent of Code')
 
-    parser.add_argument(
-        '--year', default=year, type=int, choices=year_choices, help='year to run', metavar='num',
-    )
-    parser.add_argument(
-        '--puzzle', default=day, type=int, choices=day_choices, help='puzzle to run', metavar='num',
-    )
-    parser.add_argument(
-        '--all_puzzles', default=False, action='store_true', help='run all puzzles',
-    )
-    parser.add_argument(
-        '--cache', default=False, action='store_true', help='retrun cache results of puzzles',
-    )
+    parser.add_argument('--year', default=curr_year, type=int, choices=year_choices, help='year to run', metavar='num')
+    parser.add_argument('--puzzle', default=day, type=int, choices=day_choices, help='puzzle to run', metavar='num')
+    parser.add_argument('--all_puzzles', default=False, action='store_true', help='run all puzzles')
+    parser.add_argument('--cache', default=False, action='store_true', help='return cache results of puzzles')
 
     args = parser.parse_args()
 

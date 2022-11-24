@@ -5,7 +5,7 @@ remove-files:
 	find ./src -type d -name __pycache__ -exec rm -rf '{}' +
 
 lint: remove-files
-	flake8 .
+	flake8 . --count
 
 pip-install: remove-files
 	pip install --no-cache-dir -r ./requirements.txt

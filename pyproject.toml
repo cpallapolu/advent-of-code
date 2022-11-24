@@ -1,0 +1,37 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Chanakya Pallapolu", email = "cpallapolu@gmail.com"},
+]
+dependencies = [
+    "autopep8~=1.6.0",
+    "flake8~=4.0.1",
+    "flake8-blind-except~=0.2.0",
+    "flake8-builtins~=1.5.3",
+    "flake8-commas~=2.1.0",
+    "flake8-isort~=4.1.1",
+    "flake8-mypy~=17.8.0",
+    "flake8-quotes~=3.3.1",
+    "isort~=5.10.1",
+    "markdownify~=0.11.6",
+    "markdown-include~=0.8.0",
+    "mypy~=0.931",
+    "pep8-naming~=0.12.1",
+    "pycodestyle~=2.8.0",
+    "python-githooks~=1.0.7",
+    "requests~=2.28.1",
+    "tabulate~=0.8.9",
+    "types-tabulate~=0.8.5",
+    "types-requests~=2.28.11.5",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+
+[tool.pdm]

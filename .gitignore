@@ -131,3 +131,7 @@ dmypy.json
 
 .vscode/
 settings.json
+.direnv/
+
+.pdm.toml
+__pypackages__/
