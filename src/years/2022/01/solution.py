@@ -1,27 +1,25 @@
 
-
-from collections import defaultdict
-
 from aocpuzzle import AoCPuzzle
 
 
 class Puzzle01(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
-        self.elves = 0
-        self.calories: dict[int, int] = defaultdict(int)
+        elves_calories: list[int] = [0]
 
         for calories in input_data:
             if len(calories) == 0:
-                self.elves += 1
+                elves_calories.append(0)
                 continue
 
-            self.calories[self.elves] += int(calories)
+            elves_calories[-1] += int(calories)
+
+        self.calories = sorted(elves_calories, reverse=True)
 
     def part1(self) -> int:
-        return max(self.calories.values())
+        return self.calories[0]
 
     def part2(self) -> int:
-        return sum(sorted(self.calories.values(), reverse=True)[:3])
+        return sum(self.calories[:3])
 
     def test_cases(self, input_data: list[str]) -> int:
         tests: list[dict] = [

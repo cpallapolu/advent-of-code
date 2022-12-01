@@ -16,7 +16,7 @@
 
 <tbody>
 
-<tr><td>01 </td><td>Calorie Counting</td><td>69528   </td><td>1.002 ms     </td><td>206152  </td><td>1.360 ms     </td><td>2      </td><td>0.060 ms    </td></tr>
+<tr><td>01 </td><td>Calorie Counting</td><td>69528   </td><td>0.619 ms     </td><td>206152  </td><td>0.613 ms     </td><td>2      </td><td>0.024 ms    </td></tr>
 
 </tbody>
 
