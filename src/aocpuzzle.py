@@ -84,6 +84,11 @@ class AoCPuzzle:
         if is_cache is False:
             self.results.append(str(self.day_number))
 
+            with open(self.readme_filename, 'r')as readme_file:
+                full_name = readme_file.readline()
+                colon_idx = full_name.index(':')
+                self.results.append(full_name[colon_idx + 1:].strip())
+
             start_time = time()
             self.results.append(str(self.test_cases(self.input_data)))
             self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
@@ -97,7 +102,7 @@ class AoCPuzzle:
                 self.results.append(str(part_func()))
                 self.results.append(f'{((time() - start_time) * 1000):.3f} ms')
 
-            self.results = self.results[:1] + self.results[3:] + self.results[1:3]
+            self.results = self.results[:2] + self.results[4:] + self.results[2:4]
         else:
             self.results = self.get_cache_results()
 

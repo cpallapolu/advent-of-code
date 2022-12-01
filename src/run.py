@@ -82,7 +82,7 @@ def main(year: int, puzzle: int, all_puzzles: bool, cache: bool) -> None:
 
     puzzle_outputs = [
         [
-            '#', 'Part 1', 'Part 1 Time',
+            '#', 'Puzzle Name', 'Part 1', 'Part 1 Time',
             'Part 2', 'Part 2 Time', 'Tests', 'Tests Time',
         ],
     ]
