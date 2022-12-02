@@ -2,10 +2,10 @@
 
 Part 1:
 ============================================
-Result: Calorie Counting
-Execution time: 69528
+Result: 69528
+Execution time: 0.619 ms
 
 Part 2:
 ============================================
-Result: 0.619 ms
-Execution time: 206152
+Result: 206152
+Execution time: 0.613 ms
