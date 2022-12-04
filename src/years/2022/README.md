@@ -16,6 +16,8 @@
 
 <tr><td>03 </td><td>Rucksack Reorganization</td><td>7889    </td><td>2.918 ms     </td><td>2825    </td><td>2.246 ms     </td><td>2      </td><td>6.203 ms    </td></tr>
 
+<tr><td>04 </td><td>Camp Cleanup           </td><td>464     </td><td>6.861 ms     </td><td>770     </td><td>8.530 ms     </td><td>2      </td><td>18.029 ms   </td></tr>
+
 </tbody>
 
 </table>

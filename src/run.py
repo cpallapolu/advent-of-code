@@ -52,6 +52,11 @@ class Puzzle{0}(AoCPuzzle):
             self.common(test['input_data'])
             assert self.part2() == test['part2']
 
+        self.common(input_data)
+        assert self.part1() == 1
+        self.common(input_data)
+        assert self.part2() == 2
+
         return len(tests) + 1
 """
 
