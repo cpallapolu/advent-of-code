@@ -20,6 +20,8 @@
 
 <tr><td>05 </td><td>Supply Stacks          </td><td>RNZLFZSJH</td><td>1.484 ms     </td><td>CNSFCGJSM</td><td>1.223 ms     </td><td>2      </td><td>3.568 ms    </td></tr>
 
+<tr><td>06 </td><td>Tuning Trouble         </td><td>1531     </td><td>0.653 ms     </td><td>2518     </td><td>2.059 ms     </td><td>6      </td><td>2.988 ms    </td></tr>
+
 </tbody>
 
 </table>
