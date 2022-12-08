@@ -4,10 +4,12 @@ from collections import defaultdict
 
 from aocpuzzle import AoCPuzzle
 
+DOLLAR = '$'
 CD_CMD = '$ cd'
 BACK_DIR_CMD = '$ cd ..'
 LS_CMD = '$ ls'
 BACK_DIR = '..'
+DIR_OUTPUT = 'dir '
 
 
 class Puzzle07(AoCPuzzle):
@@ -21,16 +23,11 @@ class Puzzle07(AoCPuzzle):
                 curr_working_dir.pop(-1)
             elif cmd.startswith(CD_CMD):
                 curr_working_dir.append(cmd.split().pop(-1))
-            elif cmd.startswith(LS_CMD):
+            elif cmd.startswith(LS_CMD) or cmd.startswith(DIR_OUTPUT):
                 continue
             else:
-                try:
-                    self.directory_sizes['/'.join(curr_working_dir)] += int(cmd.split().pop(0))
-                except ValueError:
-                    pass
-
-        for directory_name in sorted(self.directory_sizes.keys(), key=lambda d: d.count('/'), reverse=True):
-            self.directory_sizes['/'.join(directory_name.split('/')[:-1])] += self.directory_sizes[directory_name]
+                for idx in range(len(curr_working_dir)):
+                    self.directory_sizes['/'.join(curr_working_dir[:idx + 1])] += int(cmd.split().pop(0))
 
     def part1(self) -> int:
         return sum(size for size in self.directory_sizes.values() if size <= 100_000)
