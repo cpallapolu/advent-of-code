@@ -9,6 +9,7 @@ class Puzzle08(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
         self.grid: list[list[int]] = [[int(height) for height in line] for line in input_data]
         self.grid_cols: list[list[int]] = list(map(list, zip(*self.grid)))
+
         self.max_row = len(self.grid) - 1
         self.max_col = len(self.grid[0]) - 1
 
