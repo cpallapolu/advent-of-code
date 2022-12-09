@@ -11,5 +11,6 @@
 <tr><td>06 </td><td>Tuning Trouble         </td><td>1531     </td><td>0.653 ms     </td><td>2518     </td><td>2.059 ms     </td><td>6      </td><td>2.988 ms    </td></tr>
 <tr><td>07 </td><td>No Space Left On Device</td><td>1350966  </td><td>1.847 ms     </td><td>6296435  </td><td>1.959 ms     </td><td>2      </td><td>4.157 ms    </td></tr>
 <tr><td>08 </td><td>Treetop Tree House     </td><td>1717     </td><td>40.059 ms    </td><td>321975   </td><td>46.456 ms    </td><td>2      </td><td>92.677 ms   </td></tr>
+<tr><td>09 </td><td>Rope Bridge            </td><td>6256     </td><td>30.462 ms    </td><td>2665     </td><td>136.982 ms   </td><td>3      </td><td>159.541 ms  </td></tr>
 </tbody>
 </table>

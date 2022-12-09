@@ -106,7 +106,6 @@ class AoCPuzzle:
         else:
             self.results = self.get_cache_results()
 
-        print(self.results)
         with open(self.output_filename, 'w') as output_file:
             print('|'.join(self.results), file=output_file)
             print('\nPart 1:\n============================================', file=output_file)
