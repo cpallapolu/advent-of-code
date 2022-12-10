@@ -1,4 +1,4 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-9-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-9-green" /> <img alt="" src="https://img.shields.io/badge/stars%20-18-blue" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-green" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-blue" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
@@ -34,6 +34,8 @@
 <tr><td>08 </td><td>Treetop Tree House     </td><td>1717     </td><td>40.059 ms    </td><td>321975   </td><td>46.456 ms    </td><td>2      </td><td>92.677 ms   </td></tr>
 
 <tr><td>09 </td><td>Rope Bridge            </td><td>6256     </td><td>30.462 ms    </td><td>2665     </td><td>136.982 ms   </td><td>3      </td><td>159.541 ms  </td></tr>
+
+<tr><td>10 </td><td>Cathode-Ray Tube       </td><td>14360    </td><td>0.146 ms     </td><td>BGKAEREZ </td><td>0.099 ms     </td><td>2      </td><td>0.415 ms    </td></tr>
 
 </tbody>
 

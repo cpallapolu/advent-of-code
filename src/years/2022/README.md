@@ -28,6 +28,8 @@
 
 <tr><td>09 </td><td>Rope Bridge            </td><td>6256     </td><td>30.462 ms    </td><td>2665     </td><td>136.982 ms   </td><td>3      </td><td>159.541 ms  </td></tr>
 
+<tr><td>10 </td><td>Cathode-Ray Tube       </td><td>14360    </td><td>0.146 ms     </td><td>BGKAEREZ </td><td>0.099 ms     </td><td>2      </td><td>0.415 ms    </td></tr>
+
 </tbody>
 
 </table>
