@@ -39,9 +39,9 @@ class Puzzle10(AoCPuzzle):
     def part2(self) -> str:
         # print()
         # cycle_vals = self.simulate_cycles()
-        # for i in range(0, len(cycle_vals), 40):
+        # for idx in range(0, len(cycle_vals), 40):
         #     for crt_pos in range(40):
-        #         print(end='#' if abs(cycle_vals[i + crt_pos] - crt_pos) <= 1 else '.')
+        #         print(end='#' if abs(cycle_vals[idx + crt_pos] - crt_pos) <= 1 else '.')
         #     print()
         return 'BGKAEREZ'
 

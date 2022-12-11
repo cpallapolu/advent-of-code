@@ -13,5 +13,6 @@
 <tr><td>08 </td><td>Treetop Tree House     </td><td>1717     </td><td>40.059 ms    </td><td>321975   </td><td>46.456 ms    </td><td>2      </td><td>92.677 ms   </td></tr>
 <tr><td>09 </td><td>Rope Bridge            </td><td>6256     </td><td>30.462 ms    </td><td>2665     </td><td>136.982 ms   </td><td>3      </td><td>159.541 ms  </td></tr>
 <tr><td>10 </td><td>Cathode-Ray Tube       </td><td>14360    </td><td>0.146 ms     </td><td>BGKAEREZ </td><td>0.099 ms     </td><td>2      </td><td>0.415 ms    </td></tr>
+<tr><td>11 </td><td>Monkey in the Middle   </td><td>1        </td><td>0.074 ms     </td><td>2        </td><td>0.112 ms     </td><td>2      </td><td>0.185 ms    </td></tr>
 </tbody>
 </table>
