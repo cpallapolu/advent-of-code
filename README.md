@@ -1,11 +1,11 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-12-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-11-green" /> <img alt="" src="https://img.shields.io/badge/stars%20-22-blue" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-green" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-blue" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
 <h3>Years</h3>
-<p><a href="./src/years/2020">2020 Puzzles</a> <p><img alt="" src="https://img.shields.io/badge/day%20-12-red"/> <img alt="" src="https://img.shields.io/badge/days%20completed-11-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-22-blue" /></p></p>
-<p><a href="./src/years/2021">2021 Puzzles</a> <p><img alt="" src="https://img.shields.io/badge/day%20-12-red"/> <img alt="" src="https://img.shields.io/badge/days%20completed-11-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-22-blue" /></p></p>
-<p><a href="./src/years/2022">2022 Puzzles</a> <p><img alt="" src="https://img.shields.io/badge/day%20-12-red"/> <img alt="" src="https://img.shields.io/badge/days%20completed-11-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-22-blue" /></p></p>
+<p><a href="./src/years/2020">2020 Puzzles</a>&nbsp;&nbsp;&nbsp;<img alt="" src="https://img.shields.io/badge/days%20completed-25-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-50-blue" /></p>
+<p><a href="./src/years/2021">2021 Puzzles</a>&nbsp;&nbsp;&nbsp;<img alt="" src="https://img.shields.io/badge/days%20completed-25-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-50-blue" /></p>
+<p><a href="./src/years/2022">2022 Puzzles</a>&nbsp;&nbsp;&nbsp;<img alt="" src="https://img.shields.io/badge/days%20completed-25-green"/> <img alt="" src="https://img.shields.io/badge/stars%20-50-blue" /></p>
 <h3>2022 Puzzle Outputs</h3>
 <table>
 
