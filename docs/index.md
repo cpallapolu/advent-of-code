@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/day%20-22-red) ![](https://img.shields.io/badge/days%20completed-17-green) ![](https://img.shields.io/badge/stars%20-34-blue)
+![](https://img.shields.io/badge/day%20-22-red) ![](https://img.shields.io/badge/days%20completed-17-important) ![](https://img.shields.io/badge/stars%20-34-success)
 
 # Advent of Code
 
