@@ -1,4 +1,4 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-12-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-11-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-22-success" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-success" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
@@ -38,6 +38,8 @@
 <tr><td>10 </td><td>Cathode-Ray Tube       </td><td>14360    </td><td>0.146 ms     </td><td>BGKAEREZ   </td><td>0.099 ms     </td><td>2      </td><td>0.415 ms    </td></tr>
 
 <tr><td>11 </td><td>Monkey in the Middle   </td><td>58056    </td><td>10.664 ms    </td><td>15048718170</td><td>6261.284 ms  </td><td>2      </td><td>7445.612 ms </td></tr>
+
+<tr><td>12 </td><td>Hill Climbing Algorithm</td><td>456      </td><td>13.330 ms    </td><td>454        </td><td>2521.608 ms  </td><td>2      </td><td>2393.856 ms </td></tr>
 
 </tbody>
 

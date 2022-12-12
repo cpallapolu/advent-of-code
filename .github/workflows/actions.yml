@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 # clones your repo
-
       - uses: joblo2213/aoc-badges-action@v3
         with:
           userid: ${{ secrets.AOC_USER_ID }} # your user id, see setup on how to obtain
@@ -20,5 +19,5 @@ jobs:
           file: "README.md" # The file that contains the badges
       - uses: stefanzweifel/git-auto-commit-action@v4 # Step that pushes these local changes back to your github repo
         with:
-          commit_message: Update badges
+          commit_message: update badges by github action
           file_pattern: README.md
