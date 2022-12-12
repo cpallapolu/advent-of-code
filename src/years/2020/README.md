@@ -1,3 +1,4 @@
+<p><img alt="" src="https://img.shields.io/badge/day%20-25-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-25-green" /> <img alt="" src="https://img.shields.io/badge/stars%20-50-blue" /></p>
 <h1>Advent of Code 2020</h1>
 <h3>Puzzle Outputs</h3>
 <table>

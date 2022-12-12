@@ -22,7 +22,12 @@ def previous_years():
     for year in range(2020, curr_year + 1):
         complete_path = f'./src/years/{year}'
 
-        arr.append(f'[{year} Puzzles]({complete_path})')
+        badges = [
+            '<img alt="" src="https://img.shields.io/badge/day%20-25-red"/>',
+            '<img alt="" src="https://img.shields.io/badge/days%20completed-25-green"/>',
+            '<img alt="" src="https://img.shields.io/badge/stars%20-50-blue" />',
+        ]
+        arr.append(f"[{year} Puzzles]({complete_path}) <p>{' '.join(badges)}</p>")
 
     return '\n\n'.join(arr)
 
