@@ -22,7 +22,9 @@ class AoCPuzzle:
 
     def download_problem_statement(self) -> None:
         if isfile(self.readme_filename):
-            return
+            with open(self.readme_filename, 'r') as f:
+                if '## Part Two' in f.read():
+                    return
 
         print(f'Downloading problem statement for day {self.day_number}...')
         dl_url = f'https://adventofcode.com/{self.year}/day/{int(str(self.day_number))}'

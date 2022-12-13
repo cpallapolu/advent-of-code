@@ -15,5 +15,6 @@
 <tr><td>10 </td><td>Cathode-Ray Tube       </td><td>14360    </td><td>0.146 ms     </td><td>BGKAEREZ   </td><td>0.099 ms     </td><td>2      </td><td>0.415 ms    </td></tr>
 <tr><td>11 </td><td>Monkey in the Middle   </td><td>58056    </td><td>10.664 ms    </td><td>15048718170</td><td>6261.284 ms  </td><td>2      </td><td>7445.612 ms </td></tr>
 <tr><td>12 </td><td>Hill Climbing Algorithm</td><td>456      </td><td>13.330 ms    </td><td>454        </td><td>2521.608 ms  </td><td>2      </td><td>2393.856 ms </td></tr>
+<tr><td>13 </td><td>Distress Signal        </td><td>5825     </td><td>27.267 ms    </td><td>24477      </td><td>30.143 ms    </td><td>2      </td><td>121.822 ms  </td></tr>
 </tbody>
 </table>

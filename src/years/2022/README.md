@@ -34,6 +34,8 @@
 
 <tr><td>12 </td><td>Hill Climbing Algorithm</td><td>456      </td><td>13.330 ms    </td><td>454        </td><td>2521.608 ms  </td><td>2      </td><td>2393.856 ms </td></tr>
 
+<tr><td>13 </td><td>Distress Signal        </td><td>5825     </td><td>27.267 ms    </td><td>24477      </td><td>30.143 ms    </td><td>2      </td><td>121.822 ms  </td></tr>
+
 </tbody>
 
 </table>
