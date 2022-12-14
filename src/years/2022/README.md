@@ -36,6 +36,8 @@
 
 <tr><td>13 </td><td>Distress Signal        </td><td>5825     </td><td>27.267 ms    </td><td>24477      </td><td>30.143 ms    </td><td>2      </td><td>121.822 ms  </td></tr>
 
+<tr><td>14 </td><td>Regolith Reservoir     </td><td>858      </td><td>36.336 ms    </td><td>26845      </td><td>1427.377 ms  </td><td>2      </td><td>1580.734 ms </td></tr>
+
 </tbody>
 
 </table>

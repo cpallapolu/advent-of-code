@@ -1,4 +1,4 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-13-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-13-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-26-success" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-success" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
@@ -42,6 +42,8 @@
 <tr><td>12 </td><td>Hill Climbing Algorithm</td><td>456      </td><td>13.330 ms    </td><td>454        </td><td>2521.608 ms  </td><td>2      </td><td>2393.856 ms </td></tr>
 
 <tr><td>13 </td><td>Distress Signal        </td><td>5825     </td><td>27.267 ms    </td><td>24477      </td><td>30.143 ms    </td><td>2      </td><td>121.822 ms  </td></tr>
+
+<tr><td>14 </td><td>Regolith Reservoir     </td><td>858      </td><td>36.336 ms    </td><td>26845      </td><td>1427.377 ms  </td><td>2      </td><td>1580.734 ms </td></tr>
 
 </tbody>
 
