@@ -10,6 +10,9 @@ lint: remove-files
 pip-install: remove-files
 	pip install --no-cache-dir -r ./requirements.txt
 
+run:
+	nodemon --exec 'echo "\x1B[2J\x1B[3J\x1B[H" && python3' src/run.py
+
 run-all-puzzles:
 	python src/run.py --all_puzzles
 

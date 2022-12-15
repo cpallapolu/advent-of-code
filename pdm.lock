@@ -258,9 +258,14 @@ version = "1.26.13"
 requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
 summary = "HTTP library with thread-safe connection pooling, file post, and more."
 
+[[package]]
+name = "z3-solver"
+version = "4.11.2.0"
+summary = "an efficient SMT solver library"
+
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:63abaccb731cc9dcff4f4f04f9ee5ec1b63cb9b4768ed82724988d8f8f84efee"
+content_hash = "sha256:0238e632a920496bfacb46d2bacdd495707a65f17150bd529fb98ec44beb0b58"
 
 [metadata.files]
 "attrs 22.1.0" = [
@@ -432,4 +437,12 @@ content_hash = "sha256:63abaccb731cc9dcff4f4f04f9ee5ec1b63cb9b4768ed82724988d8f8
 "urllib3 1.26.13" = [
     {url = "https://files.pythonhosted.org/packages/65/0c/cc6644eaa594585e5875f46f3c83ee8762b647b51fc5b0fb253a242df2dc/urllib3-1.26.13-py2.py3-none-any.whl", hash = "sha256:47cc05d99aaa09c9e72ed5809b60e7ba354e64b59c9c173ac3018642d8bb41fc"},
     {url = "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz", hash = "sha256:c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"},
+]
+"z3-solver 4.11.2.0" = [
+    {url = "https://files.pythonhosted.org/packages/50/35/a2a55bc90bbaf444bcd00ee54f258dad367f58eeb8a0427f0ce066871003/z3_solver-4.11.2.0-py2.py3-none-manylinux1_x86_64.whl", hash = "sha256:9b5a11370df7ac27394fc660c812b2c9aac26f21fadf11e2c51a19cb707c1795"},
+    {url = "https://files.pythonhosted.org/packages/8f/71/eb17a3a814d2cd4bc85b05992451934375619716c86005e6f6929a74a9dc/z3-solver-4.11.2.0.tar.gz", hash = "sha256:c7c7f10350db19eec831f9a45833268022c786e9ac0fbd9b2330956b377b9c39"},
+    {url = "https://files.pythonhosted.org/packages/92/57/8e48654d743a98502c4c0e8996e4bbf18047e9f16e281ce028b27219aa5f/z3_solver-4.11.2.0-py2.py3-none-win32.whl", hash = "sha256:e4d3302c4046d65d0c8b5601d9b085f219b0fa78e312d08a5b24c86bb1629d05"},
+    {url = "https://files.pythonhosted.org/packages/a4/e7/206fcb6c72fff22c8b157decd988da0cbc59503d23318382ac83b7ec591a/z3_solver-4.11.2.0-py2.py3-none-win_amd64.whl", hash = "sha256:f763c6ad22a8455df46efa3755a75d5af5d40535a1e5ec5171c199cfda663e90"},
+    {url = "https://files.pythonhosted.org/packages/b3/d0/ae041878281ab2bf73b6ef04707432b156fff5379ce395211600b68466a9/z3_solver-4.11.2.0-py2.py3-none-macosx_10_16_x86_64.whl", hash = "sha256:90b34ffbd42ee9465ca047bfb99775c1000f6548f2b98bdeb7d52397347aa197"},
+    {url = "https://files.pythonhosted.org/packages/b9/05/eb0e140bde30c64ecfd44e6edba7129c0a19b6b0f529afcd30caa515e358/z3_solver-4.11.2.0-py2.py3-none-macosx_11_0_arm64.whl", hash = "sha256:2cb81dcc220292dfcff6b5937f5faebeba4d0db7d2cc690f43e6f619bda40c47"},
 ]
