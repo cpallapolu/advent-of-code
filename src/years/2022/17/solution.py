@@ -94,8 +94,7 @@ class Chamber:
             self.top -= height
             self.columns = [c - height for c in self.columns]
 
-    def height(self) -> int:
-        return self.base_height + self.top + 1
+        self.height = self.base_height + self.top + 1
 
     def simulate_fall(self) -> None:
         rock = Rock(self.rock_idx, Position(0, self.top + 4))
@@ -129,39 +128,46 @@ class Puzzle17(AoCPuzzle):
     def common(self, input_data: str) -> None:
         self.tower_width = 7
         self.jet_stream = input_data
+        self.jump_height = 0
+
+        self.human_size = 2022
+        self.elephant_size = 1_000_000_000_000
+        self.states: dict[str, tuple[int, int]] = {}
+
+    def save_state(self, chamber: Chamber) -> None:
+        if self.curr_cycle < 2022:
+            return
+
+        state_key = '|'.join(map(str, [chamber.rock_idx, chamber.wind_idx, *map(str, chamber.columns)]))
+
+        if state_key in self.states:
+            cycles, height = self.states[state_key]
+            loops = ((self.elephant_size - cycles) // (self.curr_cycle - cycles)) - 1
+            self.jump_height = loops * (chamber.height - height)
+
+            self.curr_cycle += loops * (self.curr_cycle - cycles)
+
+            self.states = {}
+
+        self.states[state_key] = (self.curr_cycle, chamber.height)
+
+    def solve(self, cycles: int) -> int:
+        chamber = Chamber(self.tower_width, self.jet_stream)
+        self.curr_cycle = 0
+
+        while self.curr_cycle < cycles:
+            chamber.simulate_fall()
+            self.curr_cycle += 1
+
+            self.save_state(chamber)
+
+        return self.jump_height + chamber.height
 
     def part1(self) -> int:
-        cavern = Chamber(self.tower_width, self.jet_stream)
-        attempt = 0
-
-        while attempt < 2022:
-            cavern.simulate_fall()
-            attempt += 1
-
-        return cavern.height()
+        return self.solve(self.human_size)
 
     def part2(self) -> int:
-        cavern = Chamber(self.tower_width, self.jet_stream)
-        attempt = 0
-        jump_height = 0
-        elephant_size = 1_000_000_000_000
-        state: dict[str, tuple[int, int]] = {}
-        while attempt < elephant_size:
-            cavern.simulate_fall()
-            attempt += 1
-
-            state_key = '|'.join(map(str, (cavern.rock_idx, cavern.wind_idx, '|'.join(map(str, cavern.columns)))))
-
-            if state_key in state:
-                attempts, height = state[state_key]
-                loops = ((elephant_size - attempts) // (attempt - attempts)) - 1
-                jump_height = loops * (cavern.height() - height)
-                attempt += loops * (attempt - attempts)
-                state = {}
-
-            state[state_key] = (attempt, cavern.height())
-
-        return jump_height + cavern.height()
+        return self.solve(self.elephant_size)
 
     def test_cases(self, input_data: str) -> int:
 
