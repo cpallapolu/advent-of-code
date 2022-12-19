@@ -46,6 +46,8 @@
 
 <tr><td>18 </td><td>Boiling Boulders       </td><td>3326     </td><td>30.318 ms    </td><td>1996          </td><td>122.138 ms   </td><td>2      </td><td>133.199 ms   </td></tr>
 
+<tr><td>19 </td><td>Not Enough Minerals    </td><td>1624     </td><td>36596.408 ms </td><td>12628         </td><td>61783.858 ms </td><td>2      </td><td>239874.986 ms</td></tr>
+
 </tbody>
 
 </table>

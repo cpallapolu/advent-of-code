@@ -1,4 +1,4 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-18-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-18-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-36-success" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-success" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
@@ -52,6 +52,8 @@
 <tr><td>17 </td><td>Pyroclastic Flow       </td><td>3114     </td><td>127.748 ms   </td><td>1540804597682 </td><td>290.894 ms   </td><td>2      </td><td>709.900 ms   </td></tr>
 
 <tr><td>18 </td><td>Boiling Boulders       </td><td>3326     </td><td>30.318 ms    </td><td>1996          </td><td>122.138 ms   </td><td>2      </td><td>133.199 ms   </td></tr>
+
+<tr><td>19 </td><td>Not Enough Minerals    </td><td>1624     </td><td>36596.408 ms </td><td>12628         </td><td>61783.858 ms </td><td>2      </td><td>239874.986 ms</td></tr>
 
 </tbody>
 
