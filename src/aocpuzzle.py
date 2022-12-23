@@ -67,7 +67,7 @@ class AoCPuzzle:
 
     def load_input(self) -> None:
         with open(self.input_filename, 'r') as f:
-            self.input_data = [line.strip() for line in f.readlines()]
+            self.input_data = [line for line in f.readlines()]
 
             if len(self.input_data) == 1:
                 self.input_data = self.input_data[0]

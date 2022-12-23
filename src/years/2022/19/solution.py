@@ -7,13 +7,6 @@ from re import findall
 from aocpuzzle import AoCPuzzle
 
 
-class MINERALS:
-    ORE = 1
-    CLAY = 2
-    OBSIDIAN = 4
-    GEODE = 8
-
-
 class Blueprint:
     def __init__(
         self,
