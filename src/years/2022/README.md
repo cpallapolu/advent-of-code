@@ -54,6 +54,8 @@
 
 <tr><td>22 </td><td>Monkey Map              </td><td>47462         </td><td>48.256 ms    </td><td>137045        </td><td>211.278 ms   </td><td>2      </td><td>265.890 ms   </td></tr>
 
+<tr><td>23 </td><td>Unstable Diffusion      </td><td>4249          </td><td>569.385 ms   </td><td>980           </td><td>36754.310 ms </td><td>3      </td><td>30853.405 ms </td></tr>
+
 </tbody>
 
 </table>

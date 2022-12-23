@@ -25,5 +25,6 @@
 <tr><td>20 </td><td>Grove Positioning System</td><td>19070         </td><td>337.263 ms   </td><td>14773357352059</td><td>5619.375 ms  </td><td>2      </td><td>7258.755 ms  </td></tr>
 <tr><td>21 </td><td>Monkey Math             </td><td>38731621732448</td><td>5.433 ms     </td><td>3848301405790 </td><td>23.596 ms    </td><td>2      </td><td>62.263 ms    </td></tr>
 <tr><td>22 </td><td>Monkey Map              </td><td>47462         </td><td>48.256 ms    </td><td>137045        </td><td>211.278 ms   </td><td>2      </td><td>265.890 ms   </td></tr>
+<tr><td>23 </td><td>Unstable Diffusion      </td><td>4249          </td><td>569.385 ms   </td><td>980           </td><td>36754.310 ms </td><td>3      </td><td>30853.405 ms </td></tr>
 </tbody>
 </table>
