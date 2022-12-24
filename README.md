@@ -1,4 +1,4 @@
-<p><img alt="" src="https://img.shields.io/badge/day%20-23-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-23-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-46-success" /></p>
+<p><img alt="" src="https://img.shields.io/badge/day%20-22-red" /> <img alt="" src="https://img.shields.io/badge/days%20completed-17-important" /> <img alt="" src="https://img.shields.io/badge/stars%20-34-success" /></p>
 <h1>Advent of Code</h1>
 <p>Advent of Code is a series of small self-containing programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language. Each puzzle calls upon different skills and has two parts that build on a theme</p>
 <p>More information on <a href="http://adventofcode.com/">adventofcode.com</a></p>
@@ -62,6 +62,8 @@
 <tr><td>22 </td><td>Monkey Map              </td><td>47462         </td><td>48.256 ms    </td><td>137045        </td><td>211.278 ms   </td><td>2      </td><td>265.890 ms   </td></tr>
 
 <tr><td>23 </td><td>Unstable Diffusion      </td><td>4249          </td><td>569.385 ms   </td><td>980           </td><td>36754.310 ms </td><td>3      </td><td>30853.405 ms </td></tr>
+
+<tr><td>24 </td><td>Blizzard Basin          </td><td>334           </td><td>1441.981 ms  </td><td>934           </td><td>3809.908 ms  </td><td>3      </td><td>5913.855 ms  </td></tr>
 
 </tbody>
 

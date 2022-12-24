@@ -56,6 +56,8 @@
 
 <tr><td>23 </td><td>Unstable Diffusion      </td><td>4249          </td><td>569.385 ms   </td><td>980           </td><td>36754.310 ms </td><td>3      </td><td>30853.405 ms </td></tr>
 
+<tr><td>24 </td><td>Blizzard Basin          </td><td>334           </td><td>1441.981 ms  </td><td>934           </td><td>3809.908 ms  </td><td>3      </td><td>5913.855 ms  </td></tr>
+
 </tbody>
 
 </table>
