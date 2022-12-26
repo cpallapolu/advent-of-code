@@ -1,11 +1,11 @@
-24|Blizzard Basin|334|1441.981 ms|934|3809.908 ms|3|5913.855 ms
+24|Blizzard Basin|334|1418.169 ms|934|3987.176 ms|3|5418.841 ms
 
 Part 1:
 ============================================
 Result: 334
-Execution time: 1441.981 ms
+Execution time: 1418.169 ms
 
 Part 2:
 ============================================
 Result: 934
-Execution time: 3809.908 ms
+Execution time: 3987.176 ms

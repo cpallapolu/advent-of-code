@@ -1,11 +1,11 @@
-16|Proboscidea Volcanium|2029|389.215 ms|2723|252434.805 ms|2|250563.346 ms
+16|Proboscidea Volcanium|2029|400.453 ms|2723|277280.351 ms|2|264018.851 ms
 
 Part 1:
 ============================================
 Result: 2029
-Execution time: 389.215 ms
+Execution time: 400.453 ms
 
 Part 2:
 ============================================
 Result: 2723
-Execution time: 252434.805 ms
+Execution time: 277280.351 ms

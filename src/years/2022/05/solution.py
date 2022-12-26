@@ -3,16 +3,18 @@ from itertools import zip_longest
 from re import findall
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import remove_newlines
 
 
 class Puzzle05(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = remove_newlines(input_data)
         blank_idx = input_data.index('')
+
         crates, moves = input_data[:blank_idx], input_data[blank_idx + 1:]
 
         crate_numbers, crate_contents = crates[::-1][0], crates[::-1][1:]
-        crates = [crate[1::4] for crate in [' ' + crate_numbers + ' '] + crate_contents]
-
+        crates = [crate[1::4] for crate in [' ' + crate_numbers.strip() + ' '] + crate_contents]
         self.crates = {
             int(crate_num): [entry for entry in entries if not entry.isspace()]
             for (crate_num, *entries) in list(zip_longest(*crates, fillvalue=' '))

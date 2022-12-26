@@ -4,12 +4,14 @@ from collections import defaultdict
 from re import fullmatch
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 LINE_REGEX = 'Valve ([A-Z]{2}) has flow rate=([0-9]*); tunnels? leads? to valves? ([A-Z]{2}.*)$'
 
 
 class Puzzle16(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.starting_tunnel = 'AA'
 
         self.valves: dict[str, int] = defaultdict(int)

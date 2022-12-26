@@ -3,6 +3,8 @@
 from enum import IntEnum
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import remove_newline
+from years.utils.geo import Position2D
 
 
 class Shapes(IntEnum):
@@ -13,46 +15,28 @@ class Shapes(IntEnum):
     SQUARE = 4
 
 
-class Position:
-    def __init__(self, x: int, y: int) -> None:
-        self.x = x
-        self.y = y
-
-    def __str__(self) -> str:
-        return f'(x, y): ({self.x}, {self.y})'
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-
 ROCKS = [
-    [Position(2, 0), Position(3, 0), Position(4, 0), Position(5, 0)],  # Horizontal Line
-    [Position(3, 0), Position(2, 1), Position(3, 1), Position(4, 1), Position(3, 2)],  # Plus
-    [Position(2, 0), Position(3, 0), Position(4, 0), Position(4, 1), Position(4, 2)],  # Angle
-    [Position(2, 0), Position(2, 1), Position(2, 2), Position(2, 3)],  # Vertical Bar
-    [Position(2, 0), Position(2, 1), Position(3, 0), Position(3, 1)],  # Square
+    [Position2D(2, 0), Position2D(3, 0), Position2D(4, 0), Position2D(5, 0)],  # Horizontal Line
+    [Position2D(3, 0), Position2D(2, 1), Position2D(3, 1), Position2D(4, 1), Position2D(3, 2)],  # Plus
+    [Position2D(2, 0), Position2D(3, 0), Position2D(4, 0), Position2D(4, 1), Position2D(4, 2)],  # Angle
+    [Position2D(2, 0), Position2D(2, 1), Position2D(2, 2), Position2D(2, 3)],  # Vertical Bar
+    [Position2D(2, 0), Position2D(2, 1), Position2D(3, 0), Position2D(3, 1)],  # Square
 ]
 
 
 class Rock:
-    def __init__(self, shape: int, position: Position) -> None:
+    def __init__(self, shape: int, position: Position2D) -> None:
         self.position = position
 
-        self.rock: list[Position] = ROCKS[shape]
+        self.rock: list[Position2D] = ROCKS[shape]
 
-    def positions(self) -> set[Position]:
+    def positions(self) -> set[Position2D]:
         return {
-            Position(rock_position.x + self.position.x, rock_position.y + self.position.y)
+            Position2D(rock_position.x + self.position.x, rock_position.y + self.position.y)
             for rock_position in self.rock
         }
 
-    def move(self, delta: Position) -> None:
+    def move(self, delta: Position2D) -> None:
         self.position.x += delta.x
         self.position.y += delta.y
 
@@ -62,7 +46,7 @@ class Chamber:
         self.width = width
         self.winds = winds
 
-        self.filled: set[Position] = set()
+        self.filled: set[Position2D] = set()
         self.columns = [-1 for _ in range(width)]
         self.base_height = 0
         self.top = -1
@@ -88,7 +72,7 @@ class Chamber:
 
         if height > 1:
             self.filled = {
-                Position(p.x, p.y - height) for p in self.filled if p.y >= height
+                Position2D(p.x, p.y - height) for p in self.filled if p.y >= height
             }
             self.base_height += height
             self.top -= height
@@ -98,20 +82,20 @@ class Chamber:
         return self.base_height + self.top + 1
 
     def simulate_fall(self) -> None:
-        rock = Rock(self.rock_idx, Position(0, self.top + 4))
+        rock = Rock(self.rock_idx, Position2D(0, self.top + 4))
         positions = rock.positions()
-        move = Position(0, 0)
+        move = Position2D(0, 0)
 
         while True:
             wind_dir = -1 if self.winds[self.wind_idx] == '<' else 1
             self.wind_idx = (self.wind_idx + 1) % len(self.winds)
 
-            next_horizontal_positions = {Position(p.x + wind_dir, p.y) for p in positions}
+            next_horizontal_positions = {Position2D(p.x + wind_dir, p.y) for p in positions}
             if all(p.x >= 0 and p.x < self.width and p not in self.filled for p in next_horizontal_positions):
                 move.x += wind_dir
                 positions = next_horizontal_positions
 
-            next_vertical_positions = {Position(p.x, p.y - 1) for p in positions}
+            next_vertical_positions = {Position2D(p.x, p.y - 1) for p in positions}
             if any(p.y < 0 or p in self.filled for p in next_vertical_positions):
                 break
 
@@ -127,6 +111,8 @@ class Chamber:
 
 class Puzzle17(AoCPuzzle):
     def common(self, input_data: str) -> None:
+        input_data = remove_newline(input_data)
+
         self.tower_width = 7
         self.jet_stream = input_data
 

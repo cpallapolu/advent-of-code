@@ -4,67 +4,34 @@ from collections import defaultdict
 from math import prod
 
 from aocpuzzle import AoCPuzzle
+from years.utils.geo import Position2D
 
 EMPTY = '.'
 OCCUPIED = '#'
 
 
-class Position:
-    def __init__(self, x: int, y: int) -> None:
-        self.x = x
-        self.y = y
-
-    def __str__(self) -> str:
-        return f'(x, y): ({self.x}, {self.y})'
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-
 class Puzzle23(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
-        self.elves_positions: set[Position] = {
-            Position(row_idx, col_idx)
+        self.elves_positions: set[Position2D] = {
+            Position2D(row_idx, col_idx)
             for row_idx, row in enumerate(input_data)
             for col_idx, col in enumerate(row)
             if col == OCCUPIED
         }
 
         self.moving_sequences = [
-            [Position(-1, 0), Position(-1, 1), Position(-1, -1)],  # North
-            [Position(1, 0), Position(1, 1), Position(1, -1)],  # South
-            [Position(0, -1), Position(-1, -1), Position(1, -1)],  # West
-            [Position(0, 1), Position(-1, 1), Position(1, 1)],  # East
+            [Position2D(-1, 0), Position2D(-1, 1), Position2D(-1, -1)],  # North
+            [Position2D(1, 0), Position2D(1, 1), Position2D(1, -1)],  # South
+            [Position2D(0, -1), Position2D(-1, -1), Position2D(1, -1)],  # West
+            [Position2D(0, 1), Position2D(-1, 1), Position2D(1, 1)],  # East
         ]
 
-    def print_grid(self) -> None:
-        print('=============================================')
-        min_x = min(position.x for position in self.elves_positions)
-        max_x = max(position.x for position in self.elves_positions)
-        min_y = min(position.y for position in self.elves_positions)
-        max_y = max(position.y for position in self.elves_positions)
-
-        x_range = max_x - min_x + 1
-        y_range = max_y - min_y + 1
-        print(x_range, y_range)
-        for x in range(min_x, max_x + 1):
-            line = ''
-            for y in range(min_y, max_y + 1):
-                line += OCCUPIED if Position(x, y) in self.elves_positions else EMPTY
-            print(line)
-
     def move_elves(self) -> int:
-        elves_can_move_to: dict[Position, list[Position]] = defaultdict(list)
+        elves_can_move_to: dict[Position2D, list[Position2D]] = defaultdict(list)
 
         for elf_position in self.elves_positions:
             has_any_neighbors = any([
-                elf_position + Position(x, y) in self.elves_positions
+                elf_position + Position2D(x, y) in self.elves_positions
                 for x in range(-1, 2, 1)
                 for y in range(-1, 2, 1)
                 if (x, y) != (0, 0)

@@ -1,11 +1,11 @@
-23|Unstable Diffusion|4249|569.385 ms|980|36754.310 ms|3|30853.405 ms
+23|Unstable Diffusion|4249|567.025 ms|980|31566.906 ms|3|36143.973 ms
 
 Part 1:
 ============================================
 Result: 4249
-Execution time: 569.385 ms
+Execution time: 567.025 ms
 
 Part 2:
 ============================================
 Result: 980
-Execution time: 36754.310 ms
+Execution time: 31566.906 ms

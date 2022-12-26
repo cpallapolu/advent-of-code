@@ -3,6 +3,7 @@
 from collections import defaultdict
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 DOLLAR = '$'
 CD_CMD = '$ cd'
@@ -14,6 +15,7 @@ DIR_OUTPUT = 'dir '
 
 class Puzzle07(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.directory_sizes: dict[str, int] = defaultdict(int)
 
         curr_working_dir: list[str] = []
@@ -39,7 +41,6 @@ class Puzzle07(AoCPuzzle):
         )
 
     def test_cases(self, input_data: list[str]) -> int:
-        print()
         tests: list[dict] = [
             {
                 'input_data': [

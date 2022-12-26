@@ -1,11 +1,11 @@
-19|Not Enough Minerals|1624|36596.408 ms|12628|61783.858 ms|2|239874.986 ms
+19|Not Enough Minerals|1624|38346.557 ms|12628|65952.317 ms|2|243700.334 ms
 
 Part 1:
 ============================================
 Result: 1624
-Execution time: 36596.408 ms
+Execution time: 38346.557 ms
 
 Part 2:
 ============================================
 Result: 12628
-Execution time: 61783.858 ms
+Execution time: 65952.317 ms

@@ -3,10 +3,12 @@
 from string import ascii_letters
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 
 class Puzzle03(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.rucksacks = []
 
         for data in input_data:
@@ -32,7 +34,6 @@ class Puzzle03(AoCPuzzle):
         )
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day03 test_cases in day03')
         tests: list[dict] = [
             {
                 'input_data': [

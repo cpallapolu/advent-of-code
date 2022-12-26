@@ -1,11 +1,11 @@
-17|Pyroclastic Flow|3114|127.748 ms|1540804597682|290.894 ms|2|709.900 ms
+17|Pyroclastic Flow|3114|158.866 ms|1540804597682|212.318 ms|2|455.010 ms
 
 Part 1:
 ============================================
 Result: 3114
-Execution time: 127.748 ms
+Execution time: 158.866 ms
 
 Part 2:
 ============================================
 Result: 1540804597682
-Execution time: 290.894 ms
+Execution time: 212.318 ms

@@ -1,11 +1,12 @@
 
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 
 class Puzzle25(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
-        self.input_data = [line.strip() for line in input_data]
+        self.input_data = strip_lines(input_data)
         self.place_values = '=-012'
 
     def parse_snafu(self, snafu: str) -> int:

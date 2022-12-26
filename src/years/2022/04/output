@@ -1,11 +1,11 @@
-04|Camp Cleanup|464|6.861 ms|770|8.530 ms|2|18.029 ms
+04|Camp Cleanup|464|7.746 ms|770|8.586 ms|2|29.443 ms
 
 Part 1:
 ============================================
 Result: 464
-Execution time: 6.861 ms
+Execution time: 7.746 ms
 
 Part 2:
 ============================================
 Result: 770
-Execution time: 8.530 ms
+Execution time: 8.586 ms

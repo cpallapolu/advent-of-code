@@ -1,21 +1,7 @@
 
 
 from aocpuzzle import AoCPuzzle
-
-
-class Position:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
+from years.utils.geo import Position2D
 
 
 class Puzzle09(AoCPuzzle):
@@ -23,10 +9,10 @@ class Puzzle09(AoCPuzzle):
         self.moves = [(move[0], int(move.split().pop(-1))) for move in input_data]
 
         self.directions = {
-            'U': Position(0, 1),
-            'D': Position(0, -1),
-            'L': Position(-1, 0),
-            'R': Position(1, 0),
+            'U': Position2D(0, 1),
+            'D': Position2D(0, -1),
+            'L': Position2D(-1, 0),
+            'R': Position2D(1, 0),
         }
 
     def move_sign(self, x: int, y: int) -> int:
@@ -37,7 +23,7 @@ class Puzzle09(AoCPuzzle):
         else:
             return 0
 
-    def move_tail(self, head: Position, tail: Position) -> Position:
+    def move_tail(self, head: Position2D, tail: Position2D) -> Position2D:
         update_tail = False
 
         # Check if we need to move diagonally
@@ -49,17 +35,17 @@ class Puzzle09(AoCPuzzle):
             update_tail = True
 
         tail += (
-            Position(self.move_sign(head.x, tail.x), self.move_sign(head.y, tail.y))
+            Position2D(self.move_sign(head.x, tail.x), self.move_sign(head.y, tail.y))
             if update_tail
-            else Position(0, 0)
+            else Position2D(0, 0)
         )
 
         return tail
 
     def simulate_moves(self, knots_num: int) -> int:
-        knots = [Position(0, 0) for _ in range(knots_num)]
+        knots = [Position2D(0, 0) for _ in range(knots_num)]
 
-        tail_visited_pos: set[Position] = set()
+        tail_visited_pos: set[Position2D] = set()
 
         for (direction, steps) in self.moves:
             for _ in range(steps):

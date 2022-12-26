@@ -1,9 +1,11 @@
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 
 class Puzzle01(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         elves_calories: list[int] = [0]
 
         for calories in input_data:

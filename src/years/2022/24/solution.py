@@ -1,25 +1,8 @@
 
 
 from aocpuzzle import AoCPuzzle
-
-
-class Position:
-    def __init__(self, x: int, y: int) -> None:
-        self.x = x
-        self.y = y
-
-    def __str__(self) -> str:
-        return f'(x, y): ({self.x}, {self.y})'
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
+from years.utils.common import strip_lines
+from years.utils.geo import Position2D
 
 UP = '^'
 DOWN = 'v'
@@ -27,15 +10,15 @@ LEFT = '<'
 RIGHT = '>'
 
 DIRECTIONS = {
-    UP: Position(-1, 0),
-    DOWN: Position(1, 0),
-    LEFT: Position(0, -1),
-    RIGHT: Position(0, 1),
+    UP: Position2D(-1, 0),
+    DOWN: Position2D(1, 0),
+    LEFT: Position2D(0, -1),
+    RIGHT: Position2D(0, 1),
 }
 
 
 class Blizzard:
-    def __init__(self, direction_symbol: str, position: Position) -> None:
+    def __init__(self, direction_symbol: str, position: Position2D) -> None:
         self.direction_symbol = direction_symbol
         self.position = position
 
@@ -45,15 +28,14 @@ class Blizzard:
 
 class Puzzle24(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
-        input_data = [line.strip() for line in input_data]
-
+        input_data = strip_lines(input_data)
         self.blizzards = set()
         self.walls = set()
         self.rows, self.cols = 0, 0
 
         for row_idx, row in enumerate(input_data):
             for col_idx, col in enumerate(row):
-                position = Position(row_idx, col_idx)
+                position = Position2D(row_idx, col_idx)
                 self.rows = max(self.rows, row_idx + 1)
                 self.cols = max(self.cols, col_idx + 1)
 
@@ -63,13 +45,13 @@ class Puzzle24(AoCPuzzle):
                 if col not in '.#':
                     self.blizzards.add(Blizzard(col, position))
 
-        self.start = Position(0, 1)
-        self.target = Position(self.rows - 1, self.cols - 2)
+        self.start = Position2D(0, 1)
+        self.target = Position2D(self.rows - 1, self.cols - 2)
 
-        self.walls.add(Position(self.start.x - 1, self.start.y))
-        self.walls.add(Position(self.target.x + 1, self.target.y))
+        self.walls.add(Position2D(self.start.x - 1, self.start.y))
+        self.walls.add(Position2D(self.target.x + 1, self.target.y))
 
-    def within_bounds(self, position: Position) -> bool:
+    def within_bounds(self, position: Position2D) -> bool:
         return 0 <= position.x < self.rows and 0 <= position.y < self.cols and position not in self.walls
 
     def move(self, blizzard: Blizzard) -> None:
@@ -86,7 +68,7 @@ class Puzzle24(AoCPuzzle):
         elif blizzard.direction_symbol == RIGHT:
             blizzard.position.y = 1
 
-    def move_to_target(self, start: Position, target: Position) -> None:
+    def move_to_target(self, start: Position2D, target: Position2D) -> None:
         states = set([start])
 
         while target not in states:

@@ -1,11 +1,11 @@
-01|Calorie Counting|69528|0.619 ms|206152|0.613 ms|2|0.024 ms
+01|Calorie Counting|69528|0.946 ms|206152|0.945 ms|2|2.090 ms
 
 Part 1:
 ============================================
 Result: 69528
-Execution time: 0.619 ms
+Execution time: 0.946 ms
 
 Part 2:
 ============================================
 Result: 206152
-Execution time: 0.613 ms
+Execution time: 0.945 ms

@@ -1,11 +1,11 @@
-25|Full of Hot Air|2=0=02-0----2-=02-10|0.352 ms|There is no part two!|0.007 ms|2|0.392 ms
+25|Full of Hot Air|2=0=02-0----2-=02-10|0.789 ms|There is no part two!|0.060 ms|2|0.513 ms
 
 Part 1:
 ============================================
 Result: 2=0=02-0----2-=02-10
-Execution time: 0.352 ms
+Execution time: 0.789 ms
 
 Part 2:
 ============================================
 Result: There is no part two!
-Execution time: 0.007 ms
+Execution time: 0.060 ms

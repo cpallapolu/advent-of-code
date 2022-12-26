@@ -1,11 +1,11 @@
-20|Grove Positioning System|19070|337.263 ms|14773357352059|5619.375 ms|2|7258.755 ms
+20|Grove Positioning System|19070|313.786 ms|14773357352059|5584.592 ms|2|5896.364 ms
 
 Part 1:
 ============================================
 Result: 19070
-Execution time: 337.263 ms
+Execution time: 313.786 ms
 
 Part 2:
 ============================================
 Result: 14773357352059
-Execution time: 5619.375 ms
+Execution time: 5584.592 ms

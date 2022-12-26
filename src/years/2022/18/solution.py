@@ -3,34 +3,15 @@
 from queue import Queue
 
 from aocpuzzle import AoCPuzzle
-
-
-class Position:
-    def __init__(self, x: int, y: int, z: int) -> None:
-        self.x = x
-        self.y = y
-        self.z = z
-
-    def __str__(self) -> str:
-        return f'(x, y, z): ({self.x}, {self.y}, {self.z})'
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y, self.z)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y, self.z + other.z)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y and self.z == other.z
-
+from years.utils.geo import Position3D
 
 NEIGHBORS = [
-    Position(1, 0, 0),
-    Position(-1, 0, 0),
-    Position(0, 1, 0),
-    Position(0, -1, 0),
-    Position(0, 0, 1),
-    Position(0, 0, -1),
+    Position3D(1, 0, 0),
+    Position3D(-1, 0, 0),
+    Position3D(0, 1, 0),
+    Position3D(0, -1, 0),
+    Position3D(0, 0, 1),
+    Position3D(0, 0, -1),
 ]
 
 
@@ -40,7 +21,7 @@ class Puzzle18(AoCPuzzle):
 
         for line in input_data:
             x, y, z = map(int, line.split(','))
-            self.droplet_cubes.add(Position(x + 1, y + 1, z + 1))
+            self.droplet_cubes.add(Position3D(x + 1, y + 1, z + 1))
 
     def part1(self) -> int:
         return sum([
@@ -49,7 +30,7 @@ class Puzzle18(AoCPuzzle):
             for neighbor in NEIGHBORS
         ])
 
-    def inside_boundary(self, neighbor: Position) -> bool:
+    def inside_boundary(self, neighbor: Position3D) -> bool:
         return (
             neighbor.x >= 0
             and neighbor.y >= 0
@@ -66,9 +47,9 @@ class Puzzle18(AoCPuzzle):
         self.max_y = max(cube.y for cube in self.droplet_cubes) + 2
         self.max_z = max(cube.z for cube in self.droplet_cubes) + 2
 
-        queue: Queue[Position] = Queue()
+        queue: Queue[Position3D] = Queue()
 
-        start = Position(0, 0, 0)
+        start = Position3D(0, 0, 0)
         outside.add(start)
         queue.put(start)
 

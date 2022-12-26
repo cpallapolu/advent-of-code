@@ -1,11 +1,11 @@
-09|Rope Bridge|6256|30.462 ms|2665|136.982 ms|3|159.541 ms
+09|Rope Bridge|6256|28.330 ms|2665|104.096 ms|3|169.720 ms
 
 Part 1:
 ============================================
 Result: 6256
-Execution time: 30.462 ms
+Execution time: 28.330 ms
 
 Part 2:
 ============================================
 Result: 2665
-Execution time: 136.982 ms
+Execution time: 104.096 ms

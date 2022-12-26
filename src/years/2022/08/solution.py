@@ -3,10 +3,12 @@
 from math import prod
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 
 class Puzzle08(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.grid: list[list[int]] = [[int(height) for height in line] for line in input_data]
         self.grid_cols: list[list[int]] = list(map(list, zip(*self.grid)))
 

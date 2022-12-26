@@ -1,11 +1,11 @@
-06|Tuning Trouble|1531|0.653 ms|2518|2.059 ms|6|2.988 ms
+06|Tuning Trouble|1531|0.642 ms|2518|1.947 ms|6|2.618 ms
 
 Part 1:
 ============================================
 Result: 1531
-Execution time: 0.653 ms
+Execution time: 0.642 ms
 
 Part 2:
 ============================================
 Result: 2518
-Execution time: 2.059 ms
+Execution time: 1.947 ms

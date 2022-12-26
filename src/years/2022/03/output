@@ -1,11 +1,11 @@
-03|Rucksack Reorganization|7889|2.918 ms|2825|2.246 ms|2|6.203 ms
+03|Rucksack Reorganization|7889|2.094 ms|2825|2.424 ms|2|4.378 ms
 
 Part 1:
 ============================================
 Result: 7889
-Execution time: 2.918 ms
+Execution time: 2.094 ms
 
 Part 2:
 ============================================
 Result: 2825
-Execution time: 2.246 ms
+Execution time: 2.424 ms

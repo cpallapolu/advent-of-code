@@ -5,6 +5,7 @@ from typing import Optional
 from z3 import Int, Solver
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 OPS = {
     '+': lambda a, b: a + b,
@@ -50,6 +51,7 @@ class MonkeyOp:
 
 class Puzzle21(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.monkeys = {}
 
         for line in input_data:

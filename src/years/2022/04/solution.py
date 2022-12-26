@@ -1,10 +1,12 @@
 
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 
 class Puzzle04(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.assignments = []
         for pair in input_data:
             first_start, first_end, second_start, second_end = list(
@@ -29,7 +31,6 @@ class Puzzle04(AoCPuzzle):
         )
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day04 test_cases in day04')
         tests: list[dict] = [
             {
                 'input_data': [

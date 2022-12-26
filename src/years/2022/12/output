@@ -1,11 +1,11 @@
-12|Hill Climbing Algorithm|456|13.330 ms|454|2521.608 ms|2|2393.856 ms
+12|Hill Climbing Algorithm|456|12.388 ms|454|2205.034 ms|2|2096.205 ms
 
 Part 1:
 ============================================
 Result: 456
-Execution time: 13.330 ms
+Execution time: 12.388 ms
 
 Part 2:
 ============================================
 Result: 454
-Execution time: 2521.608 ms
+Execution time: 2205.034 ms

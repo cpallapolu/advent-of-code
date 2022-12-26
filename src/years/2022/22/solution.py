@@ -4,41 +4,20 @@ from re import findall
 from typing import Optional, Union
 
 from aocpuzzle import AoCPuzzle
+from years.utils.geo import Position2D
 
-
-class Position:
-    def __init__(self, x: int, y: int) -> None:
-        self.x = x
-        self.y = y
-
-    def __str__(self) -> str:
-        return f'(x, y): ({self.x}, {self.y})'
-
-    def __hash__(self):
-        return hash(tuple((self.x, self.y)))
-
-    def __add__(self, other):
-        return Position(self.x + other.x, self.y + other.y)
-
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-    def to_tuple(self) -> tuple[int, int]:
-        return (self.x, self.y)
-
-
-TuplePositionInt = tuple[Position, int]
+TuplePositionInt = tuple[Position2D, int]
 
 
 class Puzzle22(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
         input_data = [line.rstrip() for line in input_data]
-        self.directions = {0: Position(0, 1), 1: Position(1, 0), 2: Position(0, -1), 3: Position(-1, 0)}
+        self.directions = {0: Position2D(0, 1), 1: Position2D(1, 0), 2: Position2D(0, -1), 3: Position2D(-1, 0)}
         self.rotations = {'L': -1, 'R': 1}
-        self.diagonals = {0: Position(1, 1), 1: Position(1, -1), 2: Position(-1, -1), 3: Position(-1, 1)}
+        self.diagonals = {0: Position2D(1, 1), 1: Position2D(1, -1), 2: Position2D(-1, -1), 3: Position2D(-1, 1)}
 
         self.instructions = findall(r'(\d+|L|R)', input_data[-1])
-        self.start = Position(-1, -1)
+        self.start = Position2D(-1, -1)
         self.max_rows = len(input_data[:-2])
         self.max_cols = 0
         board = []
@@ -52,9 +31,9 @@ class Puzzle22(AoCPuzzle):
             for parsed_line in board
         ]
 
-        self.start = Position(0, self.board[0].index('.'))
+        self.start = Position2D(0, self.board[0].index('.'))
 
-    def within_bounds(self, position: Position) -> bool:
+    def within_bounds(self, position: Position2D) -> bool:
         return not (
             position.x < 0
             or position.y < 0
@@ -63,7 +42,7 @@ class Puzzle22(AoCPuzzle):
             or self.board[position.x][position.y] == ' '
         )
 
-    def execute_step(self, position: Position, direction: int) -> TuplePositionInt:
+    def execute_step(self, position: Position2D, direction: int) -> TuplePositionInt:
         new_position = position + self.directions[direction]
         new_direction = direction
 
@@ -78,7 +57,9 @@ class Puzzle22(AoCPuzzle):
         else:
             return new_position, new_direction
 
-    def execute_instruction(self, position: Position, direction: int, instruction: Union[str, int]) -> TuplePositionInt:
+    def execute_instruction(
+        self, position: Position2D, direction: int, instruction: Union[str, int],
+    ) -> TuplePositionInt:
         new_direction = direction
         if instruction == 'L' or instruction == 'R':
             new_direction += self.rotations[str(instruction)]
@@ -89,7 +70,7 @@ class Puzzle22(AoCPuzzle):
 
         return position, new_direction
 
-    def perimeter_step(self, position: Position, direction: int):
+    def perimeter_step(self, position: Position2D, direction: int):
         new_position = position + self.directions[direction]
 
         if not self.within_bounds(new_position):
@@ -107,7 +88,7 @@ class Puzzle22(AoCPuzzle):
 
         return new_position, direction
 
-    def check_if_inner_corner(self, position: Position) -> tuple[bool, Optional[list[list[int]]]]:
+    def check_if_inner_corner(self, position: Position2D) -> tuple[bool, Optional[list[list[int]]]]:
         if not self.within_bounds(position):
             return False, None
 
@@ -126,7 +107,7 @@ class Puzzle22(AoCPuzzle):
         else:
             return False, None
 
-    def zip_up_edges_from_corner(self, position: Position, direction_pair: list[int]) -> None:
+    def zip_up_edges_from_corner(self, position: Position2D, direction_pair: list[int]) -> None:
         direction0 = direction_pair[0]
         direction1 = direction_pair[1]
 
@@ -168,7 +149,7 @@ class Puzzle22(AoCPuzzle):
 
         for row in range(self.max_rows):
             for col in range(self.max_cols):
-                position = Position(row, col)
+                position = Position2D(row, col)
 
                 corner_bool, direction_pair_list = self.check_if_inner_corner(position)
                 if corner_bool:
@@ -190,8 +171,8 @@ class Puzzle22(AoCPuzzle):
             while self.board[idx][right] == ' ':
                 right -= 1
 
-            dict_out[(Position(idx, left), 2)] = (Position(idx, right), 2)
-            dict_out[(Position(idx, right), 0)] = (Position(idx, left), 0)
+            dict_out[(Position2D(idx, left), 2)] = (Position2D(idx, right), 2)
+            dict_out[(Position2D(idx, right), 0)] = (Position2D(idx, left), 0)
 
         for idx in range(self.max_cols):
             top = 0
@@ -202,8 +183,8 @@ class Puzzle22(AoCPuzzle):
             while self.board[bottom][idx] == ' ':
                 bottom -= 1
 
-            dict_out[(Position(top, idx), 3)] = (Position(bottom, idx), 3)
-            dict_out[(Position(bottom, idx), 1)] = (Position(top, idx), 1)
+            dict_out[(Position2D(top, idx), 3)] = (Position2D(bottom, idx), 3)
+            dict_out[(Position2D(bottom, idx), 1)] = (Position2D(top, idx), 1)
 
         return dict_out
 

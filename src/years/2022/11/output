@@ -1,11 +1,11 @@
-11|Monkey in the Middle|58056|10.664 ms|15048718170|6261.284 ms|2|7445.612 ms
+11|Monkey in the Middle|58056|10.289 ms|15048718170|5612.750 ms|2|7486.833 ms
 
 Part 1:
 ============================================
 Result: 58056
-Execution time: 10.664 ms
+Execution time: 10.289 ms
 
 Part 2:
 ============================================
 Result: 15048718170
-Execution time: 6261.284 ms
+Execution time: 5612.750 ms

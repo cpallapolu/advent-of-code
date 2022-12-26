@@ -1,11 +1,11 @@
-14|Regolith Reservoir|858|36.336 ms|26845|1427.377 ms|2|1580.734 ms
+14|Regolith Reservoir|858|46.584 ms|26845|1468.928 ms|2|1719.681 ms
 
 Part 1:
 ============================================
 Result: 858
-Execution time: 36.336 ms
+Execution time: 46.584 ms
 
 Part 2:
 ============================================
 Result: 26845
-Execution time: 1427.377 ms
+Execution time: 1468.928 ms

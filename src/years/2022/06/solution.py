@@ -21,7 +21,6 @@ class Puzzle06(AoCPuzzle):
         return self.start_of_packet_marker(14)
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day06 test_cases in day06')
         tests: list[dict] = [
             {
                 'input_data': 'mjqjpqmgbljsphdztnvjfqwrcgsmlb',

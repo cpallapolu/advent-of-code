@@ -1,11 +1,11 @@
-07|No Space Left On Device|1350966|1.847 ms|6296435|1.959 ms|2|4.157 ms
+07|No Space Left On Device|1350966|2.048 ms|6296435|2.065 ms|2|4.294 ms
 
 Part 1:
 ============================================
 Result: 1350966
-Execution time: 1.847 ms
+Execution time: 2.048 ms
 
 Part 2:
 ============================================
 Result: 6296435
-Execution time: 1.959 ms
+Execution time: 2.065 ms

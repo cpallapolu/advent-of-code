@@ -39,7 +39,6 @@ class Puzzle02(AoCPuzzle):
         return sum(self.score(opponent, you) for (opponent, you) in self.new_rounds)
 
     def test_cases(self, input_data: list[str]) -> int:
-        print('day02 test_cases in day02')
         tests: list[dict] = [
             {
                 'input_data': [

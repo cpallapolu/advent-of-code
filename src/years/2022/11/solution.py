@@ -3,6 +3,7 @@
 from math import prod
 
 from aocpuzzle import AoCPuzzle
+from years.utils.common import strip_lines
 
 ADD_OP = '+'
 MULTIPLY_OP = '*'
@@ -37,6 +38,7 @@ class Monkey:
 
 class Puzzle11(AoCPuzzle):
     def common(self, input_data: list[str]) -> None:
+        input_data = strip_lines(input_data)
         self.monkeys = {}
 
         for monkey in '\n'.join(input_data).split('\n\n'):

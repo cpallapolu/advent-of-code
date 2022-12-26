@@ -1,11 +1,11 @@
-18|Boiling Boulders|3326|30.318 ms|1996|122.138 ms|2|133.199 ms
+18|Boiling Boulders|3326|15.495 ms|1996|168.274 ms|2|108.581 ms
 
 Part 1:
 ============================================
 Result: 3326
-Execution time: 30.318 ms
+Execution time: 15.495 ms
 
 Part 2:
 ============================================
 Result: 1996
-Execution time: 122.138 ms
+Execution time: 168.274 ms
